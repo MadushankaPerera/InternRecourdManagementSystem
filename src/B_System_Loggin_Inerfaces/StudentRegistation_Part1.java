@@ -8,6 +8,7 @@ package B_System_Loggin_Inerfaces;
 import A_DataBase.DBconnect;
 import D_System_Forms_and_Dashboard_Interfaces.FormI1A_StudentRegistation_Part2;
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import com.mysql.cj.protocol.Resultset;
 import java.awt.Color;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -104,6 +105,9 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         sliitID_number.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 sliitID_numberKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sliitID_numberKeyTyped(evt);
             }
         });
 
@@ -347,7 +351,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
 
         try {
 
-            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO studentregistation_part_1(sliitID, sliitEmail, currentYear, createPassword, options) VALUE ('" + sID + "','" + eMail + "','" + currentYeard + "','" + psw + "','"+optionStudent+"')");
+            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO studentregistation_part_1(sliitID, sliitEmail, currentYear, createPassword, options) VALUE ('" + sID + "','" + eMail + "','" + currentYeard + "','" + psw + "','" + optionStudent + "')");
             JOptionPane.showMessageDialog(null, "SUBMIT Successful");
 
             sliitID_number.setText("");
@@ -481,6 +485,21 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         }
 
     }//GEN-LAST:event_yearSelectionDropDownActionPerformed
+
+    private void sliitID_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sliitID_numberKeyTyped
+
+//        try {
+//
+//            Resultset rs = (Resultset) A_DataBase.DBconnect.connect().createStatement().executeQuery("select * from studentregistation_part_1 where  sliitID ='" + sliitID_number.getText() + "'");
+//            if (rs.next()) {
+//
+//            } else {
+//
+//            }
+//
+//        } catch (Exception e) {
+//        }
+    }//GEN-LAST:event_sliitID_numberKeyTyped
 
     RegistationType rtp;
     FormI1A_StudentRegistation_Part2 stpye;
