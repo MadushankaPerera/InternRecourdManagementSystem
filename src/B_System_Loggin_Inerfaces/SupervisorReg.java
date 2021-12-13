@@ -111,14 +111,12 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
 
         body.setBackground(new java.awt.Color(255, 255, 255));
 
-        password_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 password_txtKeyReleased(evt);
             }
         });
 
-        confirmePassword_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         confirmePassword_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 confirmePassword_txtKeyReleased(evt);
@@ -485,8 +483,8 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
 
     private void email1_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_email1_txtKeyReleased
 
-        //for Validation supervisor SLIIT email - I
-        String PATTERN = "^[a-zA-Z0-9@.@]$";
+         //for Validation supervisor SLIIT email - II
+        String PATTERN = "[a-zA-Z0-9 .@]{0,50}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(email1_txt.getText());
 
@@ -501,7 +499,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     private void email2_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_email2_txtKeyReleased
 
         //for Validation supervisor SLIIT email - II
-        String PATTERN = "^[a-zA-Z0-9@.@]$";
+        String PATTERN = "[a-zA-Z0-9 .@]{0,50}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(email2_txt.getText());
 
@@ -535,7 +533,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
 
     private void confirmePassword_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confirmePassword_txtKeyReleased
 
-        //for Validation SLIIT password
+        //for Validation SLIIT confiromPassword
         String PATTERN = "^[a-zA-Z0-9]{0,2}[a-zA-Z0-9]{0,5}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(confirmePassword_txt.getText());
