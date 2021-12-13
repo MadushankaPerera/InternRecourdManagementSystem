@@ -483,7 +483,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
 
     private void email1_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_email1_txtKeyReleased
 
-         //for Validation supervisor SLIIT email - II
+        //for Validation supervisor SLIIT email - II
         String PATTERN = "[a-zA-Z0-9 .@]{0,50}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(email1_txt.getText());
@@ -533,27 +533,48 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
 
     private void confirmePassword_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confirmePassword_txtKeyReleased
 
-        //for Validation SLIIT confiromPassword
-        String PATTERN = "^[a-zA-Z0-9]{0,2}[a-zA-Z0-9]{0,5}$";
-        Pattern patt = Pattern.compile(PATTERN);
-        Matcher match = patt.matcher(confirmePassword_txt.getText());
+//        String vc = password_txt.getText();
+//
+//        if (confirmePassword_txt.equals(vc)) {
+//            val_ConfirmPassword.setText("Password Matched");
+//            val_ConfirmPassword.setForeground(Color.blue);
+//        } else {
+//            val_ConfirmPassword.setText("Passowrd NOT Match");
+//            val_ConfirmPassword.setForeground(Color.RED);
+//        }
+//        
+//        
+        
 
-        if (match.matches()) {
-            val_ConfirmPassword.setText("Week Password");
-            val_ConfirmPassword.setForeground(Color.red);
+//        try {
+//            if (vc.equals(confirmePassword_txt)) {  //check filds
+//
+//                //for Validation SLIIT confiromPassword
+//                String PATTERN = "^[a-zA-Z0-9]{0,30}$";
+//                Pattern patt = Pattern.compile(PATTERN);
+//                Matcher match = patt.matcher(confirmePassword_txt.getText());
+//
+//                if (!match.matches()) {
+//                    val_ConfirmPassword.setText("Passowrd NOT Match");
+//                    val_ConfirmPassword.setForeground(Color.RED);
+//
+//                } else if (match.matches()) {
+//                    val_ConfirmPassword.setText("Password Matched");
+//                    val_ConfirmPassword.setForeground(Color.blue);
+//
+//                } else {
+//                    val_ConfirmPassword.setText("");
+//                }
+//            }
+//        } catch (Exception e) {
+//            val_ConfirmPassword.setText("Passowrd NOT Match");
+//            val_ConfirmPassword.setForeground(Color.RED);
+//        }
 
-        } else if (!match.matches()) {
-            val_ConfirmPassword.setText("Strong Password");
-            val_ConfirmPassword.setForeground(Color.blue);
-
-        } else {
-            val_ConfirmPassword.setText(null);
-        }
     }//GEN-LAST:event_confirmePassword_txtKeyReleased
 
     //To existing object checker
     RegistationType s3;
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Reset_btn;
     private javax.swing.JButton back_Btn;
@@ -576,7 +597,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JPasswordField password_txt;
+    public javax.swing.JPasswordField password_txt;
     private javax.swing.JButton submit_btn;
     private javax.swing.JTextField supervisorName_txt;
     private javax.swing.JTextField supervisorTitle_txt;
