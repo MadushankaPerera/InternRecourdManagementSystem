@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="QualityWork">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="Technical">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="Communication">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="Leardership">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="studentPerformance">
+    </Component>
+  </NonVisualComponents>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
@@ -19,12 +31,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="1159" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="1" pref="1160" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="2302" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="1" pref="2313" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -46,7 +58,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jRadioButton13" alignment="0" max="32767" attributes="0"/>
+                          <Component id="p1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jRadioButton14" alignment="0" max="32767" attributes="0"/>
                           <Component id="jRadioButton15" alignment="0" max="32767" attributes="0"/>
                           <Component id="jRadioButton16" alignment="0" max="32767" attributes="0"/>
@@ -95,7 +107,7 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jRadioButton2" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jRadioButton3" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton1" alignment="0" pref="168" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="894" max="-2" attributes="0"/>
                           </Group>
@@ -155,7 +167,7 @@
                               <EmptySpace min="-2" pref="770" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel24" max="32767" attributes="0"/>
+                              <Component id="jLabel24" pref="205" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="945" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -334,7 +346,7 @@
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel24" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton13" min="-2" max="-2" attributes="0"/>
+                      <Component id="p1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Component id="jRadioButton14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
@@ -355,7 +367,7 @@
                       <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="140" max="32767" attributes="0"/>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -565,7 +577,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Technical Ability"/>
+                <Property name="text" type="java.lang.String" value="Overall Student performance"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel25">
@@ -639,21 +651,33 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton1">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="QualityWork"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Above Average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton2">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="QualityWork"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton3">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="QualityWork"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Below average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton4">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Technical"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Above Average"/>
               </Properties>
               <Events>
@@ -662,21 +686,33 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton5">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Technical"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton6">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Technical"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Below average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton7">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Communication"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="   Above Average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton8">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Communication"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Average"/>
               </Properties>
               <Events>
@@ -685,21 +721,33 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton9">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Communication"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Below average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton10">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Leardership"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Above Average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton11">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Leardership"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Average"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton12">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="Leardership"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Below average"/>
               </Properties>
             </Component>
@@ -728,28 +776,43 @@
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton13">
+            <Component class="javax.swing.JRadioButton" name="p1">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="studentPerformance"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Outstanding"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton14">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="studentPerformance"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Very Good"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton15">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="studentPerformance"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Very Good"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton16">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="studentPerformance"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="     Marginal"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton17">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="studentPerformance"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="    Unsatisfactory"/>
               </Properties>
             </Component>

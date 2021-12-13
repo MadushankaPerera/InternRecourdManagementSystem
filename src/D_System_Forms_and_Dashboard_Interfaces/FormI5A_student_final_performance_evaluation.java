@@ -24,6 +24,11 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        QualityWork = new javax.swing.ButtonGroup();
+        Technical = new javax.swing.ButtonGroup();
+        Communication = new javax.swing.ButtonGroup();
+        Leardership = new javax.swing.ButtonGroup();
+        studentPerformance = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         header = new javax.swing.JPanel();
@@ -76,7 +81,7 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
         firstName_txt12 = new javax.swing.JTextField();
         firstName_txt13 = new javax.swing.JTextField();
         firstName_txt14 = new javax.swing.JTextField();
-        jRadioButton13 = new javax.swing.JRadioButton();
+        p1 = new javax.swing.JRadioButton();
         jRadioButton14 = new javax.swing.JRadioButton();
         jRadioButton15 = new javax.swing.JRadioButton();
         jRadioButton16 = new javax.swing.JRadioButton();
@@ -179,7 +184,7 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
         jLabel22.setText("How effective has the Internship Program been in meeting the needs of your organization?");
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel24.setText("Technical Ability");
+        jLabel24.setText("Overall Student performance");
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel25.setText("Your percentage rating (out of 100) on student's overall performance as an intern");
@@ -190,12 +195,16 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel27.setText("Your Agreement");
 
+        QualityWork.add(jRadioButton1);
         jRadioButton1.setText("    Above Average");
 
+        QualityWork.add(jRadioButton2);
         jRadioButton2.setText("    Average");
 
+        QualityWork.add(jRadioButton3);
         jRadioButton3.setText("    Below average");
 
+        Technical.add(jRadioButton4);
         jRadioButton4.setText("    Above Average");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,12 +212,16 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
             }
         });
 
+        Technical.add(jRadioButton5);
         jRadioButton5.setText("    Average");
 
+        Technical.add(jRadioButton6);
         jRadioButton6.setText("    Below average");
 
+        Communication.add(jRadioButton7);
         jRadioButton7.setText("   Above Average");
 
+        Communication.add(jRadioButton8);
         jRadioButton8.setText("    Average");
         jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,22 +229,31 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
             }
         });
 
+        Communication.add(jRadioButton9);
         jRadioButton9.setText("    Below average");
 
+        Leardership.add(jRadioButton10);
         jRadioButton10.setText("    Above Average");
 
+        Leardership.add(jRadioButton11);
         jRadioButton11.setText("    Average");
 
+        Leardership.add(jRadioButton12);
         jRadioButton12.setText("    Below average");
 
-        jRadioButton13.setText("    Outstanding");
+        studentPerformance.add(p1);
+        p1.setText("    Outstanding");
 
+        studentPerformance.add(jRadioButton14);
         jRadioButton14.setText("    Very Good");
 
+        studentPerformance.add(jRadioButton15);
         jRadioButton15.setText("    Very Good");
 
+        studentPerformance.add(jRadioButton16);
         jRadioButton16.setText("     Marginal");
 
+        studentPerformance.add(jRadioButton17);
         jRadioButton17.setText("    Unsatisfactory");
 
         jCheckBox1.setText("    I certify that above information is correct and genuine feedback of mine ");
@@ -284,7 +306,7 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jRadioButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jRadioButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jRadioButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jRadioButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -322,7 +344,7 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jRadioButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
+                            .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(894, 894, 894))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -367,7 +389,7 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                         .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(770, 770, 770))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                         .addGap(945, 945, 945))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -523,7 +545,7 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                 .addGap(18, 18, 18)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton13)
+                .addComponent(p1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -544,7 +566,7 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                 .addComponent(jCheckBox2)
                 .addGap(57, 57, 57)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -553,11 +575,11 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1159, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1160, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 2302, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 2313, Short.MAX_VALUE)
         );
 
         pack();
@@ -603,6 +625,10 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
     Supervisor_DashBoard sd;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup Communication;
+    private javax.swing.ButtonGroup Leardership;
+    private javax.swing.ButtonGroup QualityWork;
+    private javax.swing.ButtonGroup Technical;
     private javax.swing.JButton back_Btn;
     private javax.swing.JTextField firstName_txt;
     private javax.swing.JTextField firstName_txt1;
@@ -650,7 +676,6 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
     private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
     private javax.swing.JRadioButton jRadioButton14;
     private javax.swing.JRadioButton jRadioButton15;
     private javax.swing.JRadioButton jRadioButton16;
@@ -664,7 +689,9 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton p1;
     private javax.swing.JButton reset_btn;
+    private javax.swing.ButtonGroup studentPerformance;
     private javax.swing.JButton submit_btn;
     // End of variables declaration//GEN-END:variables
 }
