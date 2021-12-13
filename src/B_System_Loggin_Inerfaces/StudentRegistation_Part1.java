@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package B_System_Loggin_Inerfaces;
 
 import A_DataBase.DBconnect;
@@ -17,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.synth.ColorType;
 import jdk.nashorn.internal.parser.TokenType;
 import sun.security.util.Password;
+import java.sql.ResultSet;
 
 /**
  *
@@ -48,8 +44,9 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         yearSelectionDropDown = new javax.swing.JComboBox<>();
         BottomPanel = new javax.swing.JPanel();
         submite_btn = new javax.swing.JButton();
-        clear_btn = new javax.swing.JButton();
         nextPage_btn = new javax.swing.JButton();
+        update_btn = new javax.swing.JButton();
+        delete_btn = new javax.swing.JButton();
         valID_lbl = new javax.swing.JLabel();
         valEmail_lbl = new javax.swing.JLabel();
         valDropdown_lbl = new javax.swing.JLabel();
@@ -142,21 +139,12 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
 
         BottomPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        submite_btn.setBackground(new java.awt.Color(0, 204, 51));
         submite_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         submite_btn.setText("Submit");
         submite_btn.setPreferredSize(new java.awt.Dimension(77, 35));
         submite_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submite_btnActionPerformed(evt);
-            }
-        });
-
-        clear_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        clear_btn.setText("CLEAR");
-        clear_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clear_btnActionPerformed(evt);
             }
         });
 
@@ -168,28 +156,42 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
             }
         });
 
+        update_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        update_btn.setText("Update");
+        update_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_btnActionPerformed(evt);
+            }
+        });
+
+        delete_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        delete_btn.setText("Delete");
+
         javax.swing.GroupLayout BottomPanelLayout = new javax.swing.GroupLayout(BottomPanel);
         BottomPanel.setLayout(BottomPanelLayout);
         BottomPanelLayout.setHorizontalGroup(
             BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BottomPanelLayout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(clear_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(89, 89, 89)
+                .addContainerGap()
                 .addComponent(submite_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(80, 80, 80)
+                .addGap(126, 126, 126)
+                .addComponent(update_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(163, 163, 163)
+                .addComponent(delete_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(154, 154, 154)
                 .addComponent(nextPage_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(83, 83, 83))
+                .addContainerGap())
         );
         BottomPanelLayout.setVerticalGroup(
             BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BottomPanelLayout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clear_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nextPage_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submite_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                    .addComponent(nextPage_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(submite_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         valID_lbl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -453,14 +455,6 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jPasswordField1KeyReleased
 
-    private void clear_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_btnActionPerformed
-
-        sliitID_number.setText("");
-        sliitEmail_address.setText("");
-        yearSelectionDropDown.setSelectedItem("");
-        jPasswordField1.setText("");
-    }//GEN-LAST:event_clear_btnActionPerformed
-
     private void yearSelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearSelectionDropDownActionPerformed
 
         //NextButton enabale disable function
@@ -487,19 +481,13 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_yearSelectionDropDownActionPerformed
 
     private void sliitID_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sliitID_numberKeyTyped
-
-//        try {
-//
-//            Resultset rs = (Resultset) A_DataBase.DBconnect.connect().createStatement().executeQuery("select * from studentregistation_part_1 where  sliitID ='" + sliitID_number.getText() + "'");
-//            if (rs.next()) {
-//
-//            } else {
-//
-//            }
-//
-//        } catch (Exception e) {
-//        }
+        search();
     }//GEN-LAST:event_sliitID_numberKeyTyped
+
+    private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
+
+
+    }//GEN-LAST:event_update_btnActionPerformed
 
     RegistationType rtp;
     FormI1A_StudentRegistation_Part2 stpye;
@@ -510,7 +498,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
     private javax.swing.JPanel BottomPanel;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel TopPanel;
-    private javax.swing.JButton clear_btn;
+    private javax.swing.JButton delete_btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -522,10 +510,33 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
     private javax.swing.JTextField sliitID_number;
     private javax.swing.JLabel studentReg_lbl;
     private javax.swing.JButton submite_btn;
+    private javax.swing.JButton update_btn;
     private javax.swing.JLabel valDropdown_lbl;
     private javax.swing.JLabel valEmail_lbl;
     private javax.swing.JLabel valID_lbl;
     private javax.swing.JLabel valPassword_lbl;
     private javax.swing.JComboBox<String> yearSelectionDropDown;
     // End of variables declaration//GEN-END:variables
+
+    private void search() {
+
+        try {
+            ResultSet rs = A_DataBase.DBconnect.connect().createStatement().executeQuery("select * from studentregistation_part_1 where  sliitID ='" + sliitID_number.getText() + "'");
+            if (rs.next()) {
+
+                sliitID_number.setText(rs.getString("sliitID"));
+                sliitEmail_address.setText(rs.getString("sliitEmail"));
+
+                yearSelectionDropDown.setSelectedItem(rs.getString("currentYear"));
+                jPasswordField1.setText(rs.getString("createPassword"));
+
+            } else {
+                sliitID_number.grabFocus();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
