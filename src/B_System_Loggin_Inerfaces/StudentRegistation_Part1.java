@@ -369,6 +369,14 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
             sliitEmail_address.setText("");
             yearSelectionDropDown.setSelectedItem("");
             jPasswordField1.setText("");
+            
+            
+            try {
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO login(userName, password, options) VALUE ('" + eMail + "','" + psw + "','" + optionStudent + "')");
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, e);
+            }
 
         } catch (Exception e) {
 
@@ -537,7 +545,6 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
                 sliitEmail_address.setText(null);
                 yearSelectionDropDown.setSelectedItem(null);
                 jPasswordField1.setText("");
-                
 
             } catch (Exception e) {
                 e.printStackTrace();

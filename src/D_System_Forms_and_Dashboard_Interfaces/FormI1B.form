@@ -24,7 +24,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jScrollPane1" min="-2" pref="1286" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -46,95 +49,87 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="header" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="header" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel7" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="884" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel8" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="892" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel10" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="498" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel11" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="895" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel12" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="724" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel13" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="833" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel14" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="584" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel15" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="871" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel16" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="880" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel17" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="594" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel18" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="728" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel19" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="804" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="963" max="32767" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="supF_jDateChooser3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supF_jDateChooser2" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt13" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt12" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt11" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt10" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt8" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt3" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel7" max="32767" attributes="0"/>
-                                      <EmptySpace min="870" pref="870" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel8" max="32767" attributes="0"/>
-                                      <EmptySpace min="878" pref="878" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel10" max="32767" attributes="0"/>
-                                      <EmptySpace min="484" pref="484" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel11" max="32767" attributes="0"/>
-                                      <EmptySpace min="881" pref="881" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel12" max="32767" attributes="0"/>
-                                      <EmptySpace min="710" pref="710" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel13" max="32767" attributes="0"/>
-                                      <EmptySpace min="819" pref="819" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel14" max="32767" attributes="0"/>
-                                      <EmptySpace min="570" pref="570" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel15" max="32767" attributes="0"/>
-                                      <EmptySpace min="857" pref="857" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel16" max="32767" attributes="0"/>
-                                      <EmptySpace min="866" pref="866" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel17" max="32767" attributes="0"/>
-                                      <EmptySpace min="580" pref="580" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel18" max="32767" attributes="0"/>
-                                      <EmptySpace min="714" pref="714" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel19" max="32767" attributes="0"/>
-                                      <EmptySpace min="790" pref="790" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel20" max="32767" attributes="0"/>
-                                      <EmptySpace min="580" pref="580" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel21" max="32767" attributes="0"/>
-                                      <EmptySpace min="580" pref="580" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="firstName_txt2" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="939" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="jCheckBox1" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="supFdiscribe_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supFtask_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supFhours_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supFemail_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supFcontactNumber_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supFtitle_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supF_supervisorName_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supFcompanyAddress_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supFcompanyNamere_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supF_jDateChooser1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="firstName_txt1" pref="1032" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="supFSliitId_txt" pref="1047" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -149,68 +144,60 @@
                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="firstName_txt2" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supFcompanyNamere_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="supF_jDateChooser1" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supFcompanyAddress_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt4" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supF_supervisorName_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt5" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supFtitle_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel13" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt6" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supFcontactNumber_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel14" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt7" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supFemail_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel15" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt8" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="supF_jDateChooser2" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel16" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt9" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="supF_jDateChooser3" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel17" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt10" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supFhours_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel18" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt11" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supFtask_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel19" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt12" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel20" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt13" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel21" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="jPanel3" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="supFdiscribe_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="199" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                          <Component id="firstName_txt1" min="-2" pref="44" max="-2" attributes="0"/>
-                          <EmptySpace pref="1247" max="32767" attributes="0"/>
+                          <Component id="supFSliitId_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace pref="1264" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -288,7 +275,7 @@
                 <Property name="text" type="java.lang.String" value="Company Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt">
+            <Component class="javax.swing.JTextField" name="supFcompanyAddress_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -301,7 +288,7 @@
                 <Property name="text" type="java.lang.String" value="Student ID Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt1">
+            <Component class="javax.swing.JTextField" name="supFSliitId_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -314,7 +301,7 @@
                 <Property name="text" type="java.lang.String" value="Company Address"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt2">
+            <Component class="javax.swing.JTextField" name="supFcompanyNamere_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -327,12 +314,7 @@
                 <Property name="text" type="java.lang.String" value="Which calendar year have you completed or planning to complete your second year?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt3">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt4">
+            <Component class="javax.swing.JTextField" name="supF_supervisorName_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -353,7 +335,7 @@
                 <Property name="text" type="java.lang.String" value="Supervisor Title (Organizational Designation)"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt5">
+            <Component class="javax.swing.JTextField" name="supFtitle_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -366,12 +348,12 @@
                 <Property name="text" type="java.lang.String" value="Supervisor Contact Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt6">
+            <Component class="javax.swing.JTextField" name="supFcontactNumber_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt7">
+            <Component class="javax.swing.JTextField" name="supFemail_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -384,11 +366,6 @@
                 <Property name="text" type="java.lang.String" value="Supervisor E-Mail Address (Enter One Valid Company E-mail Address)"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt8">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -396,11 +373,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Internship Start Date"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt9">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
@@ -418,7 +390,7 @@
                 <Property name="text" type="java.lang.String" value="Expected Number of Hours Per Week that the student needs to work"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt10">
+            <Component class="javax.swing.JTextField" name="supFhours_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -431,12 +403,12 @@
                 <Property name="text" type="java.lang.String" value="Describe the tasks student needs to complete"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt11">
+            <Component class="javax.swing.JTextField" name="supFtask_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt12">
+            <Component class="javax.swing.JTextField" name="supFdiscribe_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -447,32 +419,6 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Describe what student will learn"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt13">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel20">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Expected Number of Hours Per Week that the student needs to work"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel21">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Expected Number of Hours Per Week that the student needs to work"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="   I certify above information is correct and take the full responsibility of the information provided"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel3">
@@ -502,7 +448,7 @@
                               <Component id="reset_btn" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="submit_btn" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -532,6 +478,12 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="com.toedter.calendar.JDateChooser" name="supF_jDateChooser1">
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="supF_jDateChooser2">
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="supF_jDateChooser3">
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

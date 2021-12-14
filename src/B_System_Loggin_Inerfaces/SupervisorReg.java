@@ -498,6 +498,12 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
             password_txt.setText("");
             confirmePassword_txt.setText("");
 
+            try {
+
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO login(userName, password, options) VALUE ('" + suEmail1 + "','" + suPassword + "','" + option + "')");
+            } catch (Exception e) {
+            }
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
             JOptionPane.showMessageDialog(null, "SUBMIT unSuccessful");
