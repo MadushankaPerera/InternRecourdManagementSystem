@@ -24,7 +24,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="1205" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="1225" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -46,103 +46,87 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel7" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="573" max="-2" attributes="0"/>
-                              <Component id="sID_lbl" min="-2" pref="230" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel10" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="323" max="-2" attributes="0"/>
-                              <Component id="jLabel3" min="-2" pref="245" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel6" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="487" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" pref="227" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="stSpecialization_txt" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel13" max="32767" attributes="0"/>
-                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="573" max="-2" attributes="0"/>
+                                      <Component id="sID_lbl" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel6" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="487" max="-2" attributes="0"/>
+                                      <Component id="currentyear_lbl" min="-2" pref="227" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="stSliitID_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="stCurrentYear_txt" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="header" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="search_txt" min="-2" pref="283" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="search_btn" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel10" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
+                                      <Component id="calenderyear_lbl" min="-2" pref="230" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel8" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
+                                      <Component id="secoundyear_lbl" min="-2" pref="230" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="stClaenderYear_txt" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="stPeriodYear_txt" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel11" max="32767" attributes="0"/>
-                                      <EmptySpace min="358" pref="358" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="669" max="-2" attributes="0"/>
+                                      <Component id="specialization_lbl" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel12" max="32767" attributes="0"/>
-                                      <EmptySpace min="385" pref="385" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="696" max="-2" attributes="0"/>
+                                      <Component id="fullName_lbl" min="-2" pref="230" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel13" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="317" max="-2" attributes="0"/>
+                                      <Component id="mobileNumber_lbl" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel14" max="32767" attributes="0"/>
-                                      <EmptySpace min="366" pref="366" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="677" max="-2" attributes="0"/>
+                                      <Component id="homeNumber_lbl" min="-2" pref="230" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel17" pref="438" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="450" max="-2" attributes="0"/>
+                                      <Component id="sEmail_lbl" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel16" max="32767" attributes="0"/>
-                                      <EmptySpace min="139" pref="139" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel17" pref="428" max="32767" attributes="0"/>
-                                      <EmptySpace min="139" pref="139" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="450" max="-2" attributes="0"/>
+                                      <Component id="startDate_lbl" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel18" max="32767" attributes="0"/>
-                                      <EmptySpace min="44" pref="44" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
+                                      <Component id="supervisorEmail_lbl" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="561" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="header" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt2" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt5" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt7" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt10" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt8" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="stSupervisorEmail_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="stStartdate_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="stEmail_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="stHomeNumber_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="stMobileNumber_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="stNameInitial_txt" alignment="1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -150,67 +134,91 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="header" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="search_btn" pref="34" max="32767" attributes="0"/>
+                          <Component id="search_txt" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="sID_lbl" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt1" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="stSliitID_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel6" max="32767" attributes="0"/>
+                          <Component id="currentyear_lbl" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="stCurrentYear_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel10" max="32767" attributes="0"/>
+                          <Component id="calenderyear_lbl" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="stClaenderYear_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel8" max="32767" attributes="0"/>
+                          <Component id="secoundyear_lbl" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="stPeriodYear_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel11" max="32767" attributes="0"/>
+                          <Component id="specialization_lbl" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="stSpecialization_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel12" max="32767" attributes="0"/>
+                          <Component id="fullName_lbl" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="stNameInitial_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel13" max="32767" attributes="0"/>
+                          <Component id="mobileNumber_lbl" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="stMobileNumber_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel14" max="32767" attributes="0"/>
+                          <Component id="homeNumber_lbl" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="stHomeNumber_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel17" min="-2" pref="15" max="-2" attributes="0"/>
+                          <Component id="sEmail_lbl" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt2" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel10" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="stEmail_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel16" max="32767" attributes="0"/>
+                          <Component id="startDate_lbl" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="firstName_txt3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel11" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt4" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="stStartdate_txt" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel12" min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel18" max="32767" attributes="0"/>
+                          <Component id="supervisorEmail_lbl" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt5" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel13" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt6" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel14" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt7" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      <Component id="jLabel17" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt9" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jLabel16" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt8" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel18" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstName_txt10" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="stSupervisorEmail_txt" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="79" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -230,7 +238,7 @@
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="back_Btn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel9" max="32767" attributes="0"/>
+                          <Component id="jLabel9" pref="1015" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -327,32 +335,32 @@
                 <Property name="text" type="java.lang.String" value="Student Name with Initials"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt">
+            <Component class="javax.swing.JTextField" name="stPeriodYear_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt1">
+            <Component class="javax.swing.JTextField" name="stSliitID_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt2">
+            <Component class="javax.swing.JTextField" name="stCurrentYear_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt3">
+            <Component class="javax.swing.JTextField" name="stClaenderYear_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt4">
+            <Component class="javax.swing.JTextField" name="stSpecialization_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt5">
+            <Component class="javax.swing.JTextField" name="stNameInitial_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -365,12 +373,12 @@
                 <Property name="text" type="java.lang.String" value="Student Mobile Phone Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt6">
+            <Component class="javax.swing.JTextField" name="stMobileNumber_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt7">
+            <Component class="javax.swing.JTextField" name="stHomeNumber_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -383,7 +391,7 @@
                 <Property name="text" type="java.lang.String" value="Student Home Phone Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt8">
+            <Component class="javax.swing.JTextField" name="stStartdate_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -404,7 +412,7 @@
                 <Property name="text" type="java.lang.String" value="Student E-Mail (Enter One Primary E-mail Address that you use)"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt9">
+            <Component class="javax.swing.JTextField" name="stEmail_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -417,7 +425,7 @@
                 <Property name="text" type="java.lang.String" value="Specify Supervisor E-Mail address for the supervisor to fill his/her information"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt10">
+            <Component class="javax.swing.JTextField" name="stSupervisorEmail_txt">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -432,12 +440,16 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="reset_btn" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                           <Component id="submit_btn" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="update_btn" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                          <Component id="delete_btn" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -448,8 +460,10 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="reset_btn" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="submit_btn" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="update_btn" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="delete_btn" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -458,7 +472,7 @@
                 <Component class="javax.swing.JButton" name="reset_btn">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Reset"/>
                   </Properties>
@@ -468,11 +482,8 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="submit_btn">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="cc" red="33" type="rgb"/>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
@@ -480,19 +491,54 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submit_btnActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="update_btn">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Update"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="delete_btn">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Delete"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="sID_lbl">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="currentyear_lbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="calenderyear_lbl">
+            </Component>
+            <Component class="javax.swing.JTextField" name="search_txt">
+            </Component>
+            <Component class="javax.swing.JButton" name="search_btn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel2"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/search-24.png"/>
+                </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel3"/>
-              </Properties>
+            <Component class="javax.swing.JLabel" name="secoundyear_lbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="specialization_lbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="fullName_lbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="mobileNumber_lbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="homeNumber_lbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="sEmail_lbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="startDate_lbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="supervisorEmail_lbl">
             </Component>
           </SubComponents>
         </Container>
