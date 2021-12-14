@@ -58,11 +58,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="p1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jRadioButton14" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jRadioButton15" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jRadioButton16" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jRadioButton17" alignment="0" min="-2" pref="398" max="-2" attributes="0"/>
+                          <Component id="perfo_1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="perfo_2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="perfo_3" alignment="0" max="32767" attributes="0"/>
+                          <Component id="perfo_4" alignment="0" min="-2" pref="398" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -71,7 +70,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt10" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="rating" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -105,9 +104,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jRadioButton2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton3" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Qual_2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Qual_3" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="Qual_1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="894" max="-2" attributes="0"/>
                           </Group>
@@ -118,9 +117,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Tech_1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Tech_2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Tech_3" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="892" max="-2" attributes="0"/>
                           </Group>
@@ -131,18 +130,18 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Com_1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Com_3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Com_2" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="895" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton10" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton11" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton12" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Lead_1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Lead_2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Lead_3" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="891" max="-2" attributes="0"/>
                           </Group>
@@ -190,24 +189,12 @@
                               <Component id="jLabel10" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="432" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel8" alignment="0" min="-2" pref="262" max="-2" attributes="0"/>
-                                  <Component id="firstName_txt" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="title" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="sID" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel12" min="-2" pref="252" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -218,34 +205,45 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt8" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt6" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt4" max="32767" attributes="0"/>
+                                  <Component id="weaknesses" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Strengths" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="supEmail" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="SupName" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt12" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt11" max="32767" attributes="0"/>
+                                  <Component id="effectiveness" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="points" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="firstName_txt15" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt14" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="firstName_txt13" max="32767" attributes="0"/>
+                                  <Component id="other_comments" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="feedback" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ways" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel8" min="-2" pref="262" max="-2" attributes="0"/>
+                                  <Component id="jLabel12" min="-2" pref="252" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel3" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="P_to" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+                          <Component id="P_from" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -258,107 +256,105 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="firstName_txt1" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="sID" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt2" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="title" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="P_from" min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="P_to" min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" pref="15" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt4" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jComboBox1" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel13" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt6" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="SupName" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt7" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="supEmail" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel14" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt8" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="Strengths" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel16" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt9" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="weaknesses" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel15" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Qual_1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="Qual_2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Qual_3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="jLabel17" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                      <Component id="Tech_1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                      <Component id="Tech_2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                      <Component id="Tech_3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel18" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
+                      <Component id="Com_1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                      <Component id="Com_2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                      <Component id="Com_3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel20" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton10" min="-2" max="-2" attributes="0"/>
+                      <Component id="Lead_1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
+                      <Component id="Lead_2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
+                      <Component id="Lead_3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel19" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt11" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="points" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel22" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt12" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="effectiveness" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel21" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt13" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="ways" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel23" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt14" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="feedback" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel26" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt15" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="other_comments" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel24" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="p1" min="-2" max="-2" attributes="0"/>
+                      <Component id="perfo_1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="perfo_2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton14" min="-2" max="-2" attributes="0"/>
+                      <Component id="perfo_3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton15" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton16" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton17" min="-2" max="-2" attributes="0"/>
+                      <Component id="perfo_4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel25" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="firstName_txt10" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="rating" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel27" min="-2" pref="15" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
@@ -367,7 +363,7 @@
                       <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace pref="90" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -604,52 +600,37 @@
                 <Property name="text" type="java.lang.String" value="Your Agreement"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt">
+            <Component class="javax.swing.JTextField" name="sID">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt1">
+            <Component class="javax.swing.JTextField" name="title">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt2">
+            <Component class="javax.swing.JTextField" name="SupName">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt3">
+            <Component class="javax.swing.JTextField" name="supEmail">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt4">
+            <Component class="javax.swing.JTextField" name="Strengths">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt6">
+            <Component class="javax.swing.JTextField" name="weaknesses">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt7">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt8">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt9">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+            <Component class="javax.swing.JRadioButton" name="Qual_1">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="QualityWork"/>
@@ -657,7 +638,7 @@
                 <Property name="text" type="java.lang.String" value="    Above Average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+            <Component class="javax.swing.JRadioButton" name="Qual_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="QualityWork"/>
@@ -665,15 +646,18 @@
                 <Property name="text" type="java.lang.String" value="    Average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+            <Component class="javax.swing.JRadioButton" name="Qual_3">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="QualityWork"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="    Below average"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Qual_3ActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+            <Component class="javax.swing.JRadioButton" name="Tech_1">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Technical"/>
@@ -681,10 +665,10 @@
                 <Property name="text" type="java.lang.String" value="    Above Average"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tech_1ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+            <Component class="javax.swing.JRadioButton" name="Tech_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Technical"/>
@@ -692,7 +676,7 @@
                 <Property name="text" type="java.lang.String" value="    Average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+            <Component class="javax.swing.JRadioButton" name="Tech_3">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Technical"/>
@@ -700,7 +684,7 @@
                 <Property name="text" type="java.lang.String" value="    Below average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+            <Component class="javax.swing.JRadioButton" name="Com_1">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Communication"/>
@@ -708,7 +692,7 @@
                 <Property name="text" type="java.lang.String" value="   Above Average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton8">
+            <Component class="javax.swing.JRadioButton" name="Com_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Communication"/>
@@ -716,10 +700,10 @@
                 <Property name="text" type="java.lang.String" value="    Average"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton8ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Com_2ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+            <Component class="javax.swing.JRadioButton" name="Com_3">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Communication"/>
@@ -727,7 +711,7 @@
                 <Property name="text" type="java.lang.String" value="    Below average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton10">
+            <Component class="javax.swing.JRadioButton" name="Lead_1">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Leardership"/>
@@ -735,7 +719,7 @@
                 <Property name="text" type="java.lang.String" value="    Above Average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton11">
+            <Component class="javax.swing.JRadioButton" name="Lead_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Leardership"/>
@@ -743,7 +727,7 @@
                 <Property name="text" type="java.lang.String" value="    Average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton12">
+            <Component class="javax.swing.JRadioButton" name="Lead_3">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Leardership"/>
@@ -751,32 +735,32 @@
                 <Property name="text" type="java.lang.String" value="    Below average"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt10">
+            <Component class="javax.swing.JTextField" name="rating">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt11">
+            <Component class="javax.swing.JTextField" name="points">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt12">
+            <Component class="javax.swing.JTextField" name="effectiveness">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt13">
+            <Component class="javax.swing.JTextField" name="ways">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt14">
+            <Component class="javax.swing.JTextField" name="feedback">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="p1">
+            <Component class="javax.swing.JRadioButton" name="perfo_1">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="studentPerformance"/>
@@ -784,7 +768,7 @@
                 <Property name="text" type="java.lang.String" value="    Outstanding"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton14">
+            <Component class="javax.swing.JRadioButton" name="perfo_2">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="studentPerformance"/>
@@ -792,31 +776,29 @@
                 <Property name="text" type="java.lang.String" value="    Very Good"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton15">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="studentPerformance"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="    Very Good"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton16">
+            <Component class="javax.swing.JRadioButton" name="perfo_3">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="studentPerformance"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="     Marginal"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perfo_3ActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton17">
+            <Component class="javax.swing.JRadioButton" name="perfo_4">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="studentPerformance"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="    Unsatisfactory"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perfo_4ActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName_txt15">
+            <Component class="javax.swing.JTextField" name="other_comments">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -888,6 +870,20 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="com.toedter.calendar.JDateChooser" name="P_from">
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="P_to">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox1">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

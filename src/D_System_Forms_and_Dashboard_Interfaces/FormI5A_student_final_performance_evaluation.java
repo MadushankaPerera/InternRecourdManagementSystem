@@ -1,6 +1,12 @@
 package D_System_Forms_and_Dashboard_Interfaces;
 
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,6 +19,8 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
      */
     public FormI5A_student_final_performance_evaluation() {
         initComponents();
+
+        combo();
     }
 
     /**
@@ -55,43 +63,42 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        firstName_txt = new javax.swing.JTextField();
-        firstName_txt1 = new javax.swing.JTextField();
-        firstName_txt2 = new javax.swing.JTextField();
-        firstName_txt3 = new javax.swing.JTextField();
-        firstName_txt4 = new javax.swing.JTextField();
-        firstName_txt6 = new javax.swing.JTextField();
-        firstName_txt7 = new javax.swing.JTextField();
-        firstName_txt8 = new javax.swing.JTextField();
-        firstName_txt9 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        firstName_txt10 = new javax.swing.JTextField();
-        firstName_txt11 = new javax.swing.JTextField();
-        firstName_txt12 = new javax.swing.JTextField();
-        firstName_txt13 = new javax.swing.JTextField();
-        firstName_txt14 = new javax.swing.JTextField();
-        p1 = new javax.swing.JRadioButton();
-        jRadioButton14 = new javax.swing.JRadioButton();
-        jRadioButton15 = new javax.swing.JRadioButton();
-        jRadioButton16 = new javax.swing.JRadioButton();
-        jRadioButton17 = new javax.swing.JRadioButton();
-        firstName_txt15 = new javax.swing.JTextField();
+        sID = new javax.swing.JTextField();
+        title = new javax.swing.JTextField();
+        SupName = new javax.swing.JTextField();
+        supEmail = new javax.swing.JTextField();
+        Strengths = new javax.swing.JTextField();
+        weaknesses = new javax.swing.JTextField();
+        Qual_1 = new javax.swing.JRadioButton();
+        Qual_2 = new javax.swing.JRadioButton();
+        Qual_3 = new javax.swing.JRadioButton();
+        Tech_1 = new javax.swing.JRadioButton();
+        Tech_2 = new javax.swing.JRadioButton();
+        Tech_3 = new javax.swing.JRadioButton();
+        Com_1 = new javax.swing.JRadioButton();
+        Com_2 = new javax.swing.JRadioButton();
+        Com_3 = new javax.swing.JRadioButton();
+        Lead_1 = new javax.swing.JRadioButton();
+        Lead_2 = new javax.swing.JRadioButton();
+        Lead_3 = new javax.swing.JRadioButton();
+        rating = new javax.swing.JTextField();
+        points = new javax.swing.JTextField();
+        effectiveness = new javax.swing.JTextField();
+        ways = new javax.swing.JTextField();
+        feedback = new javax.swing.JTextField();
+        perfo_1 = new javax.swing.JRadioButton();
+        perfo_2 = new javax.swing.JRadioButton();
+        perfo_3 = new javax.swing.JRadioButton();
+        perfo_4 = new javax.swing.JRadioButton();
+        other_comments = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         reset_btn = new javax.swing.JButton();
         submit_btn = new javax.swing.JButton();
+        P_from = new com.toedter.calendar.JDateChooser();
+        P_to = new com.toedter.calendar.JDateChooser();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -195,66 +202,78 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel27.setText("Your Agreement");
 
-        QualityWork.add(jRadioButton1);
-        jRadioButton1.setText("    Above Average");
+        QualityWork.add(Qual_1);
+        Qual_1.setText("    Above Average");
 
-        QualityWork.add(jRadioButton2);
-        jRadioButton2.setText("    Average");
+        QualityWork.add(Qual_2);
+        Qual_2.setText("    Average");
 
-        QualityWork.add(jRadioButton3);
-        jRadioButton3.setText("    Below average");
-
-        Technical.add(jRadioButton4);
-        jRadioButton4.setText("    Above Average");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        QualityWork.add(Qual_3);
+        Qual_3.setText("    Below average");
+        Qual_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                Qual_3ActionPerformed(evt);
             }
         });
 
-        Technical.add(jRadioButton5);
-        jRadioButton5.setText("    Average");
-
-        Technical.add(jRadioButton6);
-        jRadioButton6.setText("    Below average");
-
-        Communication.add(jRadioButton7);
-        jRadioButton7.setText("   Above Average");
-
-        Communication.add(jRadioButton8);
-        jRadioButton8.setText("    Average");
-        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
+        Technical.add(Tech_1);
+        Tech_1.setText("    Above Average");
+        Tech_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton8ActionPerformed(evt);
+                Tech_1ActionPerformed(evt);
             }
         });
 
-        Communication.add(jRadioButton9);
-        jRadioButton9.setText("    Below average");
+        Technical.add(Tech_2);
+        Tech_2.setText("    Average");
 
-        Leardership.add(jRadioButton10);
-        jRadioButton10.setText("    Above Average");
+        Technical.add(Tech_3);
+        Tech_3.setText("    Below average");
 
-        Leardership.add(jRadioButton11);
-        jRadioButton11.setText("    Average");
+        Communication.add(Com_1);
+        Com_1.setText("   Above Average");
 
-        Leardership.add(jRadioButton12);
-        jRadioButton12.setText("    Below average");
+        Communication.add(Com_2);
+        Com_2.setText("    Average");
+        Com_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Com_2ActionPerformed(evt);
+            }
+        });
 
-        studentPerformance.add(p1);
-        p1.setText("    Outstanding");
+        Communication.add(Com_3);
+        Com_3.setText("    Below average");
 
-        studentPerformance.add(jRadioButton14);
-        jRadioButton14.setText("    Very Good");
+        Leardership.add(Lead_1);
+        Lead_1.setText("    Above Average");
 
-        studentPerformance.add(jRadioButton15);
-        jRadioButton15.setText("    Very Good");
+        Leardership.add(Lead_2);
+        Lead_2.setText("    Average");
 
-        studentPerformance.add(jRadioButton16);
-        jRadioButton16.setText("     Marginal");
+        Leardership.add(Lead_3);
+        Lead_3.setText("    Below average");
 
-        studentPerformance.add(jRadioButton17);
-        jRadioButton17.setText("    Unsatisfactory");
+        studentPerformance.add(perfo_1);
+        perfo_1.setText("    Outstanding");
+
+        studentPerformance.add(perfo_2);
+        perfo_2.setText("    Very Good");
+
+        studentPerformance.add(perfo_3);
+        perfo_3.setText("     Marginal");
+        perfo_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfo_3ActionPerformed(evt);
+            }
+        });
+
+        studentPerformance.add(perfo_4);
+        perfo_4.setText("    Unsatisfactory");
+        perfo_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfo_4ActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setText("    I certify that above information is correct and genuine feedback of mine ");
 
@@ -306,18 +325,17 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(p1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(perfo_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(perfo_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(perfo_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(perfo_4, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(firstName_txt10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rating, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(52, 52, 52)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -342,9 +360,9 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Qual_2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Qual_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Qual_1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(894, 894, 894))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -352,9 +370,9 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Tech_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Tech_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Tech_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(892, 892, 892))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -362,16 +380,16 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Com_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Com_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Com_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(895, 895, 895))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Lead_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Lead_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Lead_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(891, 891, 891))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -406,20 +424,11 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(432, 432, 432))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(firstName_txt))
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(firstName_txt3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName_txt2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName_txt1, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(title, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sID, javax.swing.GroupLayout.Alignment.LEADING))
                         .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,26 +436,34 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(firstName_txt9, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName_txt8, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName_txt7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName_txt6)
-                            .addComponent(firstName_txt4))
+                            .addComponent(weaknesses, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Strengths, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(supEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SupName))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(firstName_txt12, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName_txt11))
+                            .addComponent(effectiveness, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(points))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(firstName_txt15, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName_txt14, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName_txt13))
-                        .addContainerGap())))
+                            .addComponent(other_comments, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(feedback, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ways))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P_to, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(P_from, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -457,107 +474,105 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                 .addGap(30, 30, 30)
                 .addComponent(jLabel7)
                 .addGap(4, 4, 4)
-                .addComponent(firstName_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sID, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(P_from, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(P_to, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SupName, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(supEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Strengths, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt9, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(weaknesses, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton1)
+                .addComponent(Qual_1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(Qual_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(Qual_3)
                 .addGap(48, 48, 48)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton4)
+                .addComponent(Tech_1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton5)
+                .addComponent(Tech_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton6)
+                .addComponent(Tech_3)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton7)
+                .addComponent(Com_1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton8)
+                .addComponent(Com_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton9)
+                .addComponent(Com_3)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton10)
+                .addComponent(Lead_1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton11)
+                .addComponent(Lead_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton12)
+                .addComponent(Lead_3)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt11, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(points, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(effectiveness, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt13, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ways, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt15, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(other_comments, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(p1)
+                .addComponent(perfo_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(perfo_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton14)
+                .addComponent(perfo_3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton17)
+                .addComponent(perfo_4)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(firstName_txt10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rating, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -566,7 +581,7 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
                 .addComponent(jCheckBox2)
                 .addGap(57, 57, 57)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -606,48 +621,211 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
         }
     }//GEN-LAST:event_back_BtnActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void Tech_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tech_1ActionPerformed
 
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_Tech_1ActionPerformed
 
-    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+    private void Com_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Com_2ActionPerformed
 
-    }//GEN-LAST:event_jRadioButton8ActionPerformed
+    }//GEN-LAST:event_Com_2ActionPerformed
 
     private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
 
+        sID.setText("");
+        title.setText("");
+        P_from.setCalendar(null);
+        P_to.setCalendar(null);
+        jComboBox1.setSelectedItem("");
+        SupName.setText("");
+        rating.setText("");
+        supEmail.setText("");
+        Strengths.setText("");
+        weaknesses.setText("");
+        studentPerformance.clearSelection();
+        Leardership.clearSelection();
+        Communication.clearSelection();
+        Technical.clearSelection();
+        QualityWork.clearSelection();
+        points.setText("");
+        effectiveness.setText("");
+        ways.setText("");
+        feedback.setText("");
+        other_comments.setText("");
+        jCheckBox1.setSelected(false);
+        jCheckBox2.setSelected(false);
     }//GEN-LAST:event_reset_btnActionPerformed
 
     private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
 
+        String stID = sID.getText().trim();
+        String Title = title.getText().trim();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        String p_From = dateFormat.format(P_from.getDate());
+        String p_To = dateFormat.format(P_to.getDate());
+        String Comp_Name = jComboBox1.getSelectedItem().toString();
+        String supName = SupName.getText().trim();
+        String sup_Email = supEmail.getText().trim();
+        String strengths = Strengths.getText().trim();
+        String Weaknesses = weaknesses.getText().trim();
+
+        String Quality = null;
+        if (Qual_1.isSelected()) {
+            Quality = "Above Average";
+        } else if (Qual_2.isSelected()) {
+            Quality = "Average";
+        } else if (Qual_3.isSelected()) {
+            Quality = "Below average";
+        }
+
+        String technic = null;
+        if (Tech_1.isSelected()) {
+            technic = "Above Average";
+        } else if (Tech_2.isSelected()) {
+            technic = "Average";
+        } else if (Tech_3.isSelected()) {
+            technic = "Below average";
+        }
+
+        String Comm = null;
+        if (Com_1.isSelected()) {
+            Comm = "Above Average";
+        } else if (Com_2.isSelected()) {
+            Comm = "Average";
+        } else if (Com_3.isSelected()) {
+            Comm = "Below average";
+        }
+
+        String Leader = null;
+        if (Lead_1.isSelected()) {
+            Leader = "Above Average";
+        } else if (Lead_2.isSelected()) {
+            Leader = "Average";
+        } else if (Lead_3.isSelected()) {
+            Leader = "Below average";
+        }
+
+        String Points = points.getText().trim();
+        String Effectiveness = effectiveness.getText().trim();
+        String Ways = ways.getText().trim();
+        String Feedback = feedback.getText().trim();
+        String Other_comments = other_comments.getText().trim();
+
+        String Perform = null;
+        if (perfo_1.isSelected()) {
+            Perform = "Outstanding";
+        } else if (perfo_2.isSelected()) {
+            Perform = "Very Good";
+        } else if (perfo_3.isSelected()) {
+            Perform = "Marginal";
+        } else if (perfo_4.isSelected()) {
+            Perform = "Unsatisfactory";
+        }
+
+        String Rating = rating.getText().trim();
+
+        try {
+
+            if (jCheckBox1.isSelected() && jCheckBox2.isSelected()) {
+                //Executing query
+
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO formi5a_student_final_performance_evaluation(studentID, Intern_Title, PeriodCompleted_From, PeriodCompleted_To, ComapnyName, SuperVname, SupEmail, StudenStrengths, StudentWeaknesses, Quality_of_Work, Technical_ability, Communication, Leadership, Points_after_Internship, Effectiveness,Suggested_Ways, Feedback, Comments, Performance, Rating )VALUE('" + stID + "','" + Title + "','" + p_From + "','" + p_To + "','" + Comp_Name + "','" + supName + "','" + sup_Email + "','" + strengths + "','" + Weaknesses + "','" + Quality + "','" + technic + "','" + Comm + "','" + Leader + "','" + Points + "','" + Effectiveness + "','" + Ways + "','" + Feedback + "','" + Other_comments + "','" + Perform + "','" + Rating + "')");
+
+                JOptionPane.showMessageDialog(null, "SUBMIT Successful");
+
+                sID.setText("");
+                title.setText("");
+                P_from.setCalendar(null);
+                P_to.setCalendar(null);
+                jComboBox1.setSelectedItem("");
+                SupName.setText("");
+                rating.setText("");
+                supEmail.setText("");
+                Strengths.setText("");
+                weaknesses.setText("");
+                studentPerformance.clearSelection();
+                Leardership.clearSelection();
+                Communication.clearSelection();
+                Technical.clearSelection();
+                QualityWork.clearSelection();
+                points.setText("");
+                effectiveness.setText("");
+                ways.setText("");
+                feedback.setText("");
+                other_comments.setText("");
+                jCheckBox1.setSelected(false);
+                jCheckBox2.setSelected(false);
+
+                if (sd == null) {
+
+                    MainDesktoppane.removeAll();
+                    Supervisor_DashBoard sboard = new Supervisor_DashBoard();
+                    MainDesktoppane.add(sboard).setVisible(true);
+
+                    sboard.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+                    sboard.setLocation(0, 0);
+
+                } else {
+
+                    MainDesktoppane.removeAll();
+                    MainDesktoppane.add(sd).setVisible(true);
+
+                    sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+                    sd.setLocation(0, 0);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Please certify the Agreements!");
+            }
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "SUBMIT Unsuccessful!");
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
     }//GEN-LAST:event_submit_btnActionPerformed
+
+    private void Qual_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Qual_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Qual_3ActionPerformed
+
+    private void perfo_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfo_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_perfo_4ActionPerformed
+
+    private void perfo_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfo_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_perfo_3ActionPerformed
 
     Supervisor_DashBoard sd;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton Com_1;
+    private javax.swing.JRadioButton Com_2;
+    private javax.swing.JRadioButton Com_3;
     private javax.swing.ButtonGroup Communication;
+    private javax.swing.JRadioButton Lead_1;
+    private javax.swing.JRadioButton Lead_2;
+    private javax.swing.JRadioButton Lead_3;
     private javax.swing.ButtonGroup Leardership;
+    private com.toedter.calendar.JDateChooser P_from;
+    private com.toedter.calendar.JDateChooser P_to;
+    private javax.swing.JRadioButton Qual_1;
+    private javax.swing.JRadioButton Qual_2;
+    private javax.swing.JRadioButton Qual_3;
     private javax.swing.ButtonGroup QualityWork;
+    private javax.swing.JTextField Strengths;
+    private javax.swing.JTextField SupName;
+    private javax.swing.JRadioButton Tech_1;
+    private javax.swing.JRadioButton Tech_2;
+    private javax.swing.JRadioButton Tech_3;
     private javax.swing.ButtonGroup Technical;
     private javax.swing.JButton back_Btn;
-    private javax.swing.JTextField firstName_txt;
-    private javax.swing.JTextField firstName_txt1;
-    private javax.swing.JTextField firstName_txt10;
-    private javax.swing.JTextField firstName_txt11;
-    private javax.swing.JTextField firstName_txt12;
-    private javax.swing.JTextField firstName_txt13;
-    private javax.swing.JTextField firstName_txt14;
-    private javax.swing.JTextField firstName_txt15;
-    private javax.swing.JTextField firstName_txt2;
-    private javax.swing.JTextField firstName_txt3;
-    private javax.swing.JTextField firstName_txt4;
-    private javax.swing.JTextField firstName_txt6;
-    private javax.swing.JTextField firstName_txt7;
-    private javax.swing.JTextField firstName_txt8;
-    private javax.swing.JTextField firstName_txt9;
+    private javax.swing.JTextField effectiveness;
+    private javax.swing.JTextField feedback;
     private javax.swing.JPanel header;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -672,26 +850,42 @@ public class FormI5A_student_final_performance_evaluation extends javax.swing.JI
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton15;
-    private javax.swing.JRadioButton jRadioButton16;
-    private javax.swing.JRadioButton jRadioButton17;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton p1;
+    private javax.swing.JTextField other_comments;
+    private javax.swing.JRadioButton perfo_1;
+    private javax.swing.JRadioButton perfo_2;
+    private javax.swing.JRadioButton perfo_3;
+    private javax.swing.JRadioButton perfo_4;
+    private javax.swing.JTextField points;
+    private javax.swing.JTextField rating;
     private javax.swing.JButton reset_btn;
+    private javax.swing.JTextField sID;
     private javax.swing.ButtonGroup studentPerformance;
     private javax.swing.JButton submit_btn;
+    private javax.swing.JTextField supEmail;
+    private javax.swing.JTextField title;
+    private javax.swing.JTextField ways;
+    private javax.swing.JTextField weaknesses;
     // End of variables declaration//GEN-END:variables
+
+    private void combo() {
+
+        try {
+            Statement stm = A_DataBase.DBconnect.connect().createStatement();
+
+            ResultSet rs = stm.executeQuery("select * from companies");
+
+            while (rs.next()) {
+
+                String Cname = rs.getString("B");
+                jComboBox1.addItem(Cname);
+
+            }
+            A_DataBase.DBconnect.connect().close();
+        } catch (Exception e) {
+
+        }
+
+    }
+
 }

@@ -1,23 +1,34 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package D_System_Forms_and_Dashboard_Interfaces;
 
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author perer
+ * @author Chathura
  */
 public class FormI3A_Daily_Diary extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form Daily_Diary
+     * Creates new form NewJInternalFrame
      */
     public FormI3A_Daily_Diary() {
         initComponents();
+
+        combo();
     }
 
     /**
@@ -36,19 +47,32 @@ public class FormI3A_Daily_Diary extends javax.swing.JInternalFrame {
         back_Btn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        firstName_txt = new javax.swing.JTextField();
-        firstName_txt1 = new javax.swing.JTextField();
-        firstName_txt2 = new javax.swing.JTextField();
-        firstName_txt4 = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        reset_btn = new javax.swing.JButton();
+        sID = new javax.swing.JTextField();
+        monday = new com.toedter.calendar.JDateChooser();
+        jLabel12 = new javax.swing.JLabel();
         submit_btn = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        reset_btn = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        tuesday = new com.toedter.calendar.JDateChooser();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea_1 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea_2 = new javax.swing.JTextArea();
+        wednesday = new com.toedter.calendar.JDateChooser();
+        ssqassa = new javax.swing.JLabel();
+        dede = new javax.swing.JLabel();
+        friday = new com.toedter.calendar.JDateChooser();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea_3 = new javax.swing.JTextArea();
+        ddd = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea_4 = new javax.swing.JTextArea();
+        thursday = new com.toedter.calendar.JDateChooser();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea_5 = new javax.swing.JTextArea();
+        supEmail = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -75,36 +99,41 @@ public class FormI3A_Daily_Diary extends javax.swing.JInternalFrame {
             .addGroup(headerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(back_Btn)
-                .addGap(18, 18, 18)
+                .addGap(172, 172, 172)
                 .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(225, 225, 225))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9))
+                    .addGroup(headerLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Company Name");
+        jLabel6.setText("Company Name :");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("SLIIT Student Identification Number");
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setText("Period - From Date");
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setText("Internship Start Date :");
+        jLabel7.setText("SLIIT Student Identification Number :");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel11.setText("Supervisor Name");
+        jLabel11.setText("Supervisor Email :");
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setText("Monday :");
+
+        submit_btn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        submit_btn.setText("Submit");
+        submit_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit_btnActionPerformed(evt);
+            }
+        });
 
         reset_btn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         reset_btn.setText("Reset");
@@ -114,53 +143,37 @@ public class FormI3A_Daily_Diary extends javax.swing.JInternalFrame {
             }
         });
 
-        submit_btn.setBackground(new java.awt.Color(51, 204, 0));
-        submit_btn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        submit_btn.setText("Submit");
-        submit_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submit_btnActionPerformed(evt);
-            }
-        });
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel13.setText("Tuesday :");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(reset_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(102, 102, 102)
-                .addComponent(submit_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(196, 196, 196))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(reset_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
+        jTextArea_1.setColumns(20);
+        jTextArea_1.setRows(5);
+        jScrollPane5.setViewportView(jTextArea_1);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Date", "DETAILS AND NOTES OF WORK CARRIED OUT, PROBLEMS ENCOUNTERED AND HOW SOLVED ETC., SKETCHES AND DIMENSIONS TO BE GIVEN WHEREVER POSSIBLE"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
+        jTextArea_2.setColumns(20);
+        jTextArea_2.setRows(5);
+        jScrollPane6.setViewportView(jTextArea_2);
+
+        ssqassa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ssqassa.setText("Wedensday :");
+
+        dede.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        dede.setText("Friday :");
+
+        jTextArea_3.setColumns(20);
+        jTextArea_3.setRows(5);
+        jScrollPane8.setViewportView(jTextArea_3);
+
+        ddd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ddd.setText("Thursday :");
+
+        jTextArea_4.setColumns(20);
+        jTextArea_4.setRows(5);
+        jScrollPane7.setViewportView(jTextArea_4);
+
+        jTextArea_5.setColumns(20);
+        jTextArea_5.setRows(5);
+        jScrollPane9.setViewportView(jTextArea_5);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -169,37 +182,61 @@ public class FormI3A_Daily_Diary extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(firstName_txt)
-                    .addComponent(firstName_txt4)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(763, 763, 763))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(889, 889, 889))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(885, 885, 885))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(dede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(1037, 1037, 1037))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ddd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(963, 963, 963))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(695, 695, 695))
+                                .addGap(303, 303, 303)
+                                .addComponent(reset_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(102, 102, 102)
+                                .addComponent(submit_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(thursday, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(friday, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(294, 294, 294))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(supEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(header, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                                .addGap(1102, 1102, 1102))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(ssqassa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(953, 953, 953))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(821, 821, 821))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(801, 801, 801))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                                .addGap(820, 820, 820))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(817, 817, 817))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(68, 68, 68))
-                    .addComponent(firstName_txt2)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(firstName_txt1)
-                    .addContainerGap()))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane5)
+                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tuesday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(monday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(wednesday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(sID, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,32 +245,51 @@ public class FormI3A_Daily_Diary extends javax.swing.JInternalFrame {
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel7)
-                .addGap(61, 61, 61)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sID, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addGap(8, 8, 8)
-                .addComponent(firstName_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(supEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(374, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(131, 131, 131)
-                    .addComponent(firstName_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1002, Short.MAX_VALUE)))
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(monday, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tuesday, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ssqassa, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(wednesday, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ddd, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(thursday, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(dede, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(friday, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(reset_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(submit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -242,18 +298,22 @@ public class FormI3A_Daily_Diary extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1181, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1)
+                .addGap(10, 10, 10))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void back_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_BtnActionPerformed
-        
+
         if (sd == null) {
 
             MainDesktoppane.removeAll();
@@ -273,37 +333,200 @@ public class FormI3A_Daily_Diary extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_back_BtnActionPerformed
 
-    private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
-
-    }//GEN-LAST:event_reset_btnActionPerformed
-
     private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+        String StID = sID.getText().trim();
+        String compName = jComboBox1.getSelectedItem().toString();
+        String SupEmail = supEmail.getText().trim();
+        String Monday = dateFormat.format(monday.getDate());
+        String Activity1 = jTextArea_1.getText().trim();
+        String Tuesday = dateFormat.format(tuesday.getDate());
+        String Activity2 = jTextArea_2.getText().trim();
+        String Wednesday = dateFormat.format(wednesday.getDate());
+        String Activity3 = jTextArea_3.getText().trim();
+        String Thursday = dateFormat.format(thursday.getDate());
+        String Activity4 = jTextArea_4.getText().trim();
+        String Friday = dateFormat.format(friday.getDate());
+        String Activity5 = jTextArea_5.getText().trim();
+
+        try {
+
+            //JOptionPane.YES_NO_OPTION
+            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO daily_diary(StID, compName, SupEmail, Monday,Activity1, Tuesday,Activity2, Wednesday,Activity3,Thursday,Activity4,Friday,Activity5)"
+                    + "VALUE ('" + StID + "','" + compName + "','" + SupEmail + "','" + Monday + "','" + Activity1 + "','" + Tuesday + "','" + Activity2 + "','" + Wednesday + "','" + Activity3 + "','" + Thursday + "','" + Activity4 + "','" + Friday + "','" + Activity5 + "')");
+
+            email();
+
+            JOptionPane.showMessageDialog(null, "SUBMIT Successful!");
+
+            sID.setText("");
+            jComboBox1.setSelectedItem("");
+            supEmail.setText("");
+            monday.setCalendar(null);
+            tuesday.setCalendar(null);
+            wednesday.setCalendar(null);
+            thursday.setCalendar(null);
+            friday.setCalendar(null);
+            jTextArea_1.setText("");
+            jTextArea_2.setText("");
+            jTextArea_3.setText("");
+            jTextArea_4.setText("");
+            jTextArea_5.setText("");
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "SUBMIT Unsuccessful!");
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+
 
     }//GEN-LAST:event_submit_btnActionPerformed
 
+    private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
 
+        sID.setText("");
+        jComboBox1.setSelectedItem(0);
+        supEmail.setText("");
+        monday.setCalendar(null);
+        tuesday.setCalendar(null);
+        wednesday.setCalendar(null);
+        thursday.setCalendar(null);
+        friday.setCalendar(null);
+        jTextArea_1.setText("");
+        jTextArea_2.setText("");
+        jTextArea_3.setText("");
+        jTextArea_4.setText("");
+        jTextArea_5.setText("");
+    }//GEN-LAST:event_reset_btnActionPerformed
     Student_DashBoard sd;
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_Btn;
-    private javax.swing.JTextField firstName_txt;
-    private javax.swing.JTextField firstName_txt1;
-    private javax.swing.JTextField firstName_txt2;
-    private javax.swing.JTextField firstName_txt4;
+    private javax.swing.JLabel ddd;
+    private javax.swing.JLabel dede;
+    private com.toedter.calendar.JDateChooser friday;
     private javax.swing.JPanel header;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextArea jTextArea_1;
+    private javax.swing.JTextArea jTextArea_2;
+    private javax.swing.JTextArea jTextArea_3;
+    private javax.swing.JTextArea jTextArea_4;
+    private javax.swing.JTextArea jTextArea_5;
+    private com.toedter.calendar.JDateChooser monday;
     private javax.swing.JButton reset_btn;
+    private javax.swing.JTextField sID;
+    private javax.swing.JLabel ssqassa;
     private javax.swing.JButton submit_btn;
+    private javax.swing.JTextField supEmail;
+    private com.toedter.calendar.JDateChooser thursday;
+    private com.toedter.calendar.JDateChooser tuesday;
+    private com.toedter.calendar.JDateChooser wednesday;
     // End of variables declaration//GEN-END:variables
+
+    private void email() {
+
+        String ToEmail = supEmail.getText();
+        String FromEmail = "info.irms.sliit@gmail.com";//studyviral2@gmail.com
+        String FromEmailPassword = "info@1345";//You email Password from you want to send email
+
+        String Subjects = "Student ID : " + sID.getText() + " - Daily Dairy Submitted!";
+        Properties props = new Properties();
+        props.setProperty("mail.transport.protocol", "smtp");
+        props.setProperty("mail.host", "smtp.gmail.com");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.debug", "true");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.fallback", "false");
+
+        Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(FromEmail, FromEmailPassword);
+            }
+        });
+        try {
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            String Monday = dateFormat.format(monday.getDate());
+            String Tuesday = dateFormat.format(tuesday.getDate());
+            String Wednesday = dateFormat.format(wednesday.getDate());
+            String Thursday = dateFormat.format(thursday.getDate());
+            String Friday = dateFormat.format(friday.getDate());
+
+            javax.mail.internet.MimeMessage message = new javax.mail.internet.MimeMessage(session);
+            message.setFrom(new InternetAddress(FromEmail));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(ToEmail));
+            message.setSubject(Subjects);
+
+            message.setText("========================================================================================================\n"
+                    + "Form I – 3A – INTERN’S DAILY DIARY\n"
+                    + "======================================================================================================== \n\n"
+                    + "Student ID : " + sID.getText() + "\n"
+                    + "Student Email : " + sID.getText() + "@my.sliit.lk"
+                    + "\n" + "Comapany Name : " + jComboBox1.getSelectedItem().toString() + "\n"
+                    + "____________________________________________________________________________________________________________ "
+                    + "\n\n" + "Monday : " + Monday + ""
+                    + "\n\n" + jTextArea_1.getText() + "\n"
+                    + "____________________________________________________________________________________________________________ "
+                    + "\n\n" + "Tuesday : " + Tuesday + ""
+                    + "\n\n" + jTextArea_2.getText() + "\n"
+                    + "____________________________________________________________________________________________________________ "
+                    + "\n\n" + "Wednesday : " + Wednesday + ""
+                    + "\n\n" + jTextArea_3.getText() + "\n"
+                    + "____________________________________________________________________________________________________________ "
+                    + "\n\n" + "Thursday : " + Thursday + ""
+                    + "\n\n" + jTextArea_4.getText() + "\n"
+                    + "____________________________________________________________________________________________________________ "
+                    + "\n\n" + "Friday : " + Friday + ""
+                    + "\n\n" + jTextArea_5.getText() + "\n"
+                    + "____________________________________________________________________________________________________________\n\n\n\n"
+                    + "Supervisor Comments for the Week :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  \n\n\n\n\n"
+                    + "Supervisor’s Signature :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _                      Date :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ "
+            );
+
+            Transport.send(message);
+
+        } catch (Exception ex) {
+            System.out.println("" + ex);
+        }
+
+    }
+
+    private void combo() {
+
+        try {
+            Statement stm = A_DataBase.DBconnect.connect().createStatement();
+
+            ResultSet rs = stm.executeQuery("select * from companies");
+
+            while (rs.next()) {
+
+                String Cname = rs.getString("B");
+                jComboBox1.addItem(Cname);
+
+            }
+            A_DataBase.DBconnect.connect().close();
+        } catch (Exception e) {
+
+        }
+
+    }
+
 }
