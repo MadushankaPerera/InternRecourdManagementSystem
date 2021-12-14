@@ -343,23 +343,23 @@ public class StudentView extends javax.swing.JInternalFrame {
 
     private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
 
-//        if (adD == null) {
-//
-//            MainDesktoppane.removeAll();
-//            AdminDashboard ad = new AdminDashboard();
-//            MainDesktoppane.add(ad).setVisible(true);
-//
-//            ad.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
-//            ad.setLocation(0, 0);
-//
-//        } else {
-//
-//            MainDesktoppane.removeAll();
-//            MainDesktoppane.add(adD).setVisible(true);
-//
-//            adD.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
-//            adD.setLocation(0, 0);
-//        }
+        if (sd == null) {
+
+            MainDesktoppane.removeAll();
+            Supervisor_DashBoard ad = new Supervisor_DashBoard();
+            MainDesktoppane.add(ad).setVisible(true);
+
+            ad.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            ad.setLocation(0, 0);
+
+        } else {
+
+            MainDesktoppane.removeAll();
+            MainDesktoppane.add(sd).setVisible(true);
+
+            sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            sd.setLocation(0, 0);
+        }
     }//GEN-LAST:event_back_btnActionPerformed
 
     Supervisor_DashBoard sd;

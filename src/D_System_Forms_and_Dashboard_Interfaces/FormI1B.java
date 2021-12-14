@@ -1,5 +1,16 @@
 package D_System_Forms_and_Dashboard_Interfaces;
 
+import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import java.text.SimpleDateFormat;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import sun.rmi.transport.Transport;
+
 /**
  *
  * @author perer
@@ -22,7 +33,7 @@ public class FormI1B extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         header = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -139,6 +150,11 @@ public class FormI1B extends javax.swing.JInternalFrame {
 
         reset_btn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         reset_btn.setText("Reset");
+        reset_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reset_btnActionPerformed(evt);
+            }
+        });
 
         submit_btn.setBackground(new java.awt.Color(51, 204, 0));
         submit_btn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -154,20 +170,20 @@ public class FormI1B extends javax.swing.JInternalFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(247, 247, 247)
+                .addGap(248, 248, 248)
                 .addComponent(reset_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(80, 80, 80)
                 .addComponent(submit_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(261, 261, 261))
+                .addGap(260, 260, 260))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reset_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(submit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -296,42 +312,120 @@ public class FormI1B extends javax.swing.JInternalFrame {
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(supFdiscribe_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addGap(48, 48, 48)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(131, 131, 131)
                     .addComponent(supFSliitId_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1264, Short.MAX_VALUE)))
+                    .addContainerGap(1068, Short.MAX_VALUE)))
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        jScrollPane2.setViewportView(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void back_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_BtnActionPerformed
-    
+
+        if (sd == null) {
+
+            MainDesktoppane.removeAll();
+            Supervisor_DashBoard ad = new Supervisor_DashBoard();
+            MainDesktoppane.add(ad).setVisible(true);
+
+            ad.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            ad.setLocation(0, 0);
+
+        } else {
+
+            MainDesktoppane.removeAll();
+            MainDesktoppane.add(sd).setVisible(true);
+
+            sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            sd.setLocation(0, 0);
+        }
+
     }//GEN-LAST:event_back_BtnActionPerformed
 
     private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
-        // TODO add your handling code here:
+
+        String supFId = supFSliitId_txt.getText().trim();
+        String supFcompany = supFcompanyNamere_txt.getText().trim();
+
+        SimpleDateFormat dateFormate = new SimpleDateFormat("dd-MM-yyyy");
+        String staddDate1 = dateFormate.format(supF_jDateChooser1.getDate()).trim(); //date 1
+        String staddDate2 = dateFormate.format(supF_jDateChooser2.getDate()).trim();
+        String staddDate3 = dateFormate.format(supF_jDateChooser3.getDate()).trim();
+
+        String supFcAddress = supFcompanyAddress_txt.getText().trim();
+        String supFsupervisoruname = supF_supervisorName_txt.getText().trim();
+        String supFtitle = supFtitle_txt.getText().trim();
+        String supFsuContact = supFcontactNumber_txt.getText().trim();
+        String supFeMail = supFemail_txt.getText().trim();
+        String supFhourse = supFhours_txt.getText().trim();
+        String supFtask = supFtask_txt.getText().trim();
+        String supFdescri = supFdiscribe_txt.getText().trim();
+
+        try {
+
+            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO i_1b_supervisor_feedback_and_approval(sID, CompName, CalenderYear, compAddress, SupName, SupTitle, SupContactNo,SupEmail, In_StartDate,In_EndDate , Hours, Tasks, Will_Learn)"
+                    + " VALUE ('" + supFId + "','" + supFcompany + "','" + staddDate1 + "','" + supFcAddress + "','" + supFsupervisoruname + "','" + supFtitle + "','" + supFsuContact + "','" + supFeMail + "','" + staddDate2 + "','" + staddDate3 + "','" + supFhourse + "','" + supFtask + "','" + supFdescri + "')");
+
+            supFSliitId_txt.setText("");
+            supF_jDateChooser1.setToolTipText("");
+            supF_jDateChooser2.setToolTipText("");
+            supF_jDateChooser3.setToolTipText("");
+            supF_supervisorName_txt.setText("");
+            supFcompanyAddress_txt.setText("");
+            supFcompanyNamere_txt.setText("");
+            supFcontactNumber_txt.setText("");
+            supFdiscribe_txt.setText("");
+            supFemail_txt.setText("");
+            supFhours_txt.setText("");
+            supFtask_txt.setText("");
+            supFtitle_txt.setText("");
+
+            JOptionPane.showMessageDialog(null, "SUBMIT Successful");
+            email();
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "SUBMIT unSuccessful");
+            JOptionPane.showMessageDialog(null, e);
+        }
+
     }//GEN-LAST:event_submit_btnActionPerformed
 
+    private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
+
+        supFSliitId_txt.setText("");
+        supF_jDateChooser1.setToolTipText("");
+        supF_jDateChooser2.setToolTipText("");
+        supF_jDateChooser3.setToolTipText("");
+        supF_supervisorName_txt.setText("");
+        supFcompanyAddress_txt.setText("");
+        supFcompanyNamere_txt.setText("");
+        supFcontactNumber_txt.setText("");
+        supFdiscribe_txt.setText("");
+        supFemail_txt.setText("");
+        supFhours_txt.setText("");
+        supFtask_txt.setText("");
+        supFtitle_txt.setText("");
+    }//GEN-LAST:event_reset_btnActionPerformed
+
+    Supervisor_DashBoard sd;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_Btn;
@@ -352,7 +446,7 @@ public class FormI1B extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton reset_btn;
     private javax.swing.JButton submit_btn;
     private javax.swing.JTextField supFSliitId_txt;
@@ -369,4 +463,43 @@ public class FormI1B extends javax.swing.JInternalFrame {
     private javax.swing.JTextField supFtask_txt;
     private javax.swing.JTextField supFtitle_txt;
     // End of variables declaration//GEN-END:variables
+
+    private void email() {
+
+        String ToEmail = "pererasupun15@gmail.com";
+        String FromEmail = "info.irms.sliit@gmail.com";//studyviral2@gmail.com
+        String FromEmailPassword = "info@1345";//You email Password from you want to send email
+
+        String Subjects = "Student ID : " + supFSliitId_txt.getText() + " : Supervisor Feedback and Approval of the Daily Diaries";
+        Properties props = new Properties();
+        props.setProperty("mail.transport.protocol", "smtp");
+        props.setProperty("mail.host", "smtp.gmail.com");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.debug", "true");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.fallback", "false");
+
+        Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(FromEmail, FromEmailPassword);
+            }
+        });
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(FromEmail));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(ToEmail));
+            message.setSubject(Subjects);
+            message.setText("Student ID : " + supFSliitId_txt.getText() + "'s Daliy Daries have been Approved by the Supervisor " + supF_supervisorName_txt.getText() + ".");
+
+            // Transport.send(message);
+            javax.mail.Transport.send(message);
+
+        } catch (Exception ex) {
+            System.out.println("" + ex);
+        }
+
+    }
 }

@@ -40,6 +40,7 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
         studentView = new javax.swing.JButton();
         formI5A = new javax.swing.JButton();
         formI3A = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         mainPnel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -113,6 +114,8 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         studentView.setBackground(new java.awt.Color(255, 255, 255));
         studentView.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         studentView.setText("Student View");
@@ -124,7 +127,7 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
 
         formI5A.setBackground(new java.awt.Color(255, 255, 255));
         formI5A.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        formI5A.setText("FormI-5A");
+        formI5A.setText("Form I-5A");
         formI5A.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 formI5AActionPerformed(evt);
@@ -133,10 +136,18 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
 
         formI3A.setBackground(new java.awt.Color(255, 255, 255));
         formI3A.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        formI3A.setText("FormI-3A");
+        formI3A.setText("Form I-3A");
         formI3A.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 formI3AActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setText("Form I - 1B");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -147,25 +158,23 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(formI5A, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(172, 172, 172)
+                .addGap(89, 89, 89)
                 .addComponent(formI3A, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(138, 138, 138)
+                .addGap(84, 84, 84)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(56, 56, 56)
                 .addComponent(studentView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(63, 63, 63))
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(formI5A, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(studentView, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(formI3A, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(formI5A, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(formI3A, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(studentView, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
         );
 
@@ -190,7 +199,7 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(ImagePanle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bottemPanel_line, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -294,10 +303,34 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_formI3AActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        if (i2 == null) {
+
+            MainDesktoppane.removeAll();
+            FormI1B i1 = new FormI1B();
+            MainDesktoppane.add(i1).setVisible(true);
+
+            i1.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            i1.setLocation(0, 0);
+
+        } else {
+
+            MainDesktoppane.removeAll();
+            MainDesktoppane.add(i2).setVisible(true);
+
+            i2.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            i2.setLocation(0, 0);
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     FormI5A_student_final_performance_evaluation i5a;
     FormI3A_Approval_Supervisor_feedback i3a;
     StudentView sv;
     B_System_Loggin_Inerfaces.LogginPage login;
+    FormI1B i2;
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ImagePanle;
@@ -307,6 +340,7 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
     private javax.swing.JLabel displyedName_lbl;
     private javax.swing.JButton formI3A;
     private javax.swing.JButton formI5A;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel mainPnel;
     private javax.swing.JLabel studentImage;
