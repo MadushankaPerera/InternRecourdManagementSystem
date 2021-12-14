@@ -517,8 +517,6 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
                 System.out.println("pass8");
                 A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_part_1 SET sliitID = '" + sId + "', sliitEmail = '" + sEmail + "', currentYear = '" + sYear + "', createPassword = '" + pss + "' ,options = '" + option + "' WHERE sliitID = '" + sId + "'");
 
-                //A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_part_1 SET sliitID = '"+sId+"',currentYear='"+sYear+"',createPassword='"+pss+"',options='"+option+"' WHERE = sliitID '" + sId + "'");
-
                 JOptionPane.showMessageDialog(null, "Update Successfully");
 
             } catch (SQLException ex) {
