@@ -393,11 +393,6 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        searchbar_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchbar_txtActionPerformed(evt);
-            }
-        });
         searchbar_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchbar_txtKeyReleased(evt);
@@ -607,7 +602,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         Matcher match = patt.matcher(password_txt.getText());
 
         if (match.matches()) {
-            val_pasword.setText("Week Password");
+            val_pasword.setText("Weak Password");
             val_pasword.setForeground(Color.red);
 
         } else if (!match.matches()) {
@@ -620,6 +615,21 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_password_txtKeyReleased
 
     private void confirmePassword_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confirmePassword_txtKeyReleased
+
+        String cp = confirmePassword_txt.getText();
+
+        if (password_txt.getText().equalsIgnoreCase(cp)) {
+
+            //Executing query
+            val_ConfirmPassword.setText("Password Match");
+            val_ConfirmPassword.setForeground(Color.blue);
+
+        } else {
+
+            val_ConfirmPassword.setText("Password did not Match!");
+            val_ConfirmPassword.setForeground(Color.red);
+
+        }
 
     }//GEN-LAST:event_confirmePassword_txtKeyReleased
 
@@ -673,7 +683,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_searchbar_txtKeyReleased
 
     private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
-        
+
         int p = JOptionPane.showConfirmDialog(null, "If you really want to the DELETE");
 
         if (p == 0) {
@@ -704,10 +714,6 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
 
 
     }//GEN-LAST:event_delete_btnActionPerformed
-
-    private void searchbar_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbar_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchbar_txtActionPerformed
 
 //To existing object checker
     RegistationType s3;

@@ -599,7 +599,6 @@
             </Container>
             <Component class="javax.swing.JTextField" name="searchbar_txt">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchbar_txtActionPerformed"/>
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="searchbar_txtKeyReleased"/>
               </Events>
             </Component>

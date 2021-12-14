@@ -453,7 +453,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         Matcher match = patt.matcher(jPasswordField1.getText());
 
         if (match.matches()) {
-            valPassword_lbl.setText("Week Password");
+            valPassword_lbl.setText("Weak Password");
             valPassword_lbl.setForeground(Color.red);
 
         } else if (!match.matches()) {
