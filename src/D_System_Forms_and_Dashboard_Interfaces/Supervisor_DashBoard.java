@@ -143,6 +143,7 @@ public class Supervisor_DashBoard extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Form I - 1B");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

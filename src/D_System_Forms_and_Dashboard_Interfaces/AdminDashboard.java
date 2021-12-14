@@ -96,7 +96,6 @@ public class AdminDashboard extends javax.swing.JInternalFrame {
         ManageCompany_btn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ManageCompany_btn.setText("MANAGE COMPANIES");
         ManageCompany_btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        ManageCompany_btn.setEnabled(false);
         ManageCompany_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ManageCompany_btnActionPerformed(evt);

@@ -113,6 +113,8 @@ public class Student_DashBoard extends javax.swing.JInternalFrame {
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         formI1A.setBackground(new java.awt.Color(255, 255, 255));
         formI1A.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         formI1A.setText("FormI-1A");
