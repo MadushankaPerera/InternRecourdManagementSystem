@@ -6,6 +6,8 @@
 package D_System_Forms_and_Dashboard_Interfaces;
 
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
@@ -20,6 +22,8 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
      */
     public FormI3A_Approval_Supervisor_feedback() {
         initComponents();
+        
+        combo();
     }
 
     /**
@@ -183,7 +187,11 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
                 .addGap(25, 25, 25))
         );
 
-        suF_company_jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        suF_company_jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suF_company_jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -393,6 +401,10 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
         }
     }//GEN-LAST:event_jCheckBox1KeyPressed
 
+    private void suF_company_jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suF_company_jComboBox1ActionPerformed
+       combo();
+    }//GEN-LAST:event_suF_company_jComboBox1ActionPerformed
+
     Supervisor_DashBoard sd;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -425,4 +437,29 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
     private com.toedter.calendar.JDateChooser suFtoDate_jDateChooser2;
     private javax.swing.JButton submit_btn;
     // End of variables declaration//GEN-END:variables
+
+
+private void combo() {
+
+        try {
+            Statement stm = A_DataBase.DBconnect.connect().createStatement();
+
+            ResultSet rs = stm.executeQuery("select * from companies");
+
+            while (rs.next()) {
+
+                String Cname = rs.getString("B");
+                suF_company_jComboBox1.addItem(Cname);
+
+            }
+            A_DataBase.DBconnect.connect().close();
+        } catch (Exception e) {
+
+        }
+
+    }
+
+
+
+
 }
