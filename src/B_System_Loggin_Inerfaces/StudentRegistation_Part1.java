@@ -497,26 +497,18 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
 
         int u = JOptionPane.showConfirmDialog(null, "If you really want to UPDATE?");
-        System.out.println("pass1");
+
         if (u == 0) {
 
-            System.out.println("pass2");
-
             String sId = sliitID_number.getText();
-            System.out.println("pass3");
-
             String sEmail = sliitEmail_address.getText();
-            System.out.println("pass4");
             String sYear = yearSelectionDropDown.getSelectedItem().toString();
-            System.out.println("pass5");
             String pss = jPasswordField1.getText();
-            System.out.println("pass6");
             String option = optionstudent_txt.getText();
-            System.out.println("pass7");
-            try {
-                System.out.println("pass8");
-                A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_part_1 SET sliitID = '" + sId + "', sliitEmail = '" + sEmail + "', currentYear = '" + sYear + "', createPassword = '" + pss + "' ,options = '" + option + "' WHERE sliitID = '" + sId + "'");
 
+            try {
+
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_part_1 SET sliitID = '" + sId + "', sliitEmail = '" + sEmail + "', currentYear = '" + sYear + "', createPassword = '" + pss + "' ,options = '" + option + "' WHERE sliitID = '" + sId + "'");
                 JOptionPane.showMessageDialog(null, "Update Successfully");
 
             } catch (SQLException ex) {
