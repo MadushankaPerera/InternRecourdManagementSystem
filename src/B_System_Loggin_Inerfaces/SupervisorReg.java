@@ -63,7 +63,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         Reset_btn = new javax.swing.JButton();
         submit_btn = new javax.swing.JButton();
         update_btn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        delete_btn = new javax.swing.JButton();
         val_SupervisorTitle_lbl = new javax.swing.JLabel();
         val_CompanyName_lbl = new javax.swing.JLabel();
         val_ContactNumber_lbl = new javax.swing.JLabel();
@@ -216,11 +216,11 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Delete");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        delete_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        delete_btn.setText("Delete");
+        delete_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                delete_btnActionPerformed(evt);
             }
         });
 
@@ -236,7 +236,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
                 .addGap(89, 89, 89)
                 .addComponent(update_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(81, 81, 81)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(delete_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -247,7 +247,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
                     .addComponent(submit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Reset_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
@@ -393,6 +393,11 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        searchbar_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchbar_txtActionPerformed(evt);
+            }
+        });
         searchbar_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchbar_txtKeyReleased(evt);
@@ -667,7 +672,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         search();
     }//GEN-LAST:event_searchbar_txtKeyReleased
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
         
         int p = JOptionPane.showConfirmDialog(null, "If you really want to the DELETE");
 
@@ -698,7 +703,11 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         }
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_delete_btnActionPerformed
+
+    private void searchbar_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbar_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchbar_txtActionPerformed
 
 //To existing object checker
     RegistationType s3;
@@ -709,10 +718,10 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     private javax.swing.JTextField companyName_txt;
     private javax.swing.JPasswordField confirmePassword_txt;
     private javax.swing.JTextField contactNumber_txt;
+    private javax.swing.JButton delete_btn;
     private javax.swing.JTextField email1_txt;
     private javax.swing.JTextField email2_txt;
     private javax.swing.JPanel header;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

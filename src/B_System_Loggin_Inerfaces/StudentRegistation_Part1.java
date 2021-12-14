@@ -151,6 +151,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
             }
         });
 
+        nextPage_btn.setBackground(new java.awt.Color(255, 153, 153));
         nextPage_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         nextPage_btn.setText("NEXT Page");
         nextPage_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -565,7 +566,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
     private javax.swing.JButton nextPage_btn;
     private javax.swing.JTextField optionstudent_txt;
     private javax.swing.JTextField sliitEmail_address;
-    private javax.swing.JTextField sliitID_number;
+    public static javax.swing.JTextField sliitID_number;
     private javax.swing.JLabel studentReg_lbl;
     private javax.swing.JButton submite_btn;
     private javax.swing.JButton update_btn;

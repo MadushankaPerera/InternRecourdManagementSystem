@@ -1,7 +1,12 @@
 package D_System_Forms_and_Dashboard_Interfaces;
 
+import A_DataBase.DBconnect;
 import B_System_Loggin_Inerfaces.StudentRegistation_Part1;
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,17 +33,12 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        stPeriodYear_txt = new javax.swing.JTextField();
         stSliitID_txt = new javax.swing.JTextField();
-        stCurrentYear_txt = new javax.swing.JTextField();
-        stClaenderYear_txt = new javax.swing.JTextField();
-        stSpecialization_txt = new javax.swing.JTextField();
         stNameInitial_txt = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         stMobileNumber_txt = new javax.swing.JTextField();
         stHomeNumber_txt = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        stStartdate_txt = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         stEmail_txt = new javax.swing.JTextField();
@@ -50,18 +50,18 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
         update_btn = new javax.swing.JButton();
         delete_btn = new javax.swing.JButton();
         sID_lbl = new javax.swing.JLabel();
-        currentyear_lbl = new javax.swing.JLabel();
-        calenderyear_lbl = new javax.swing.JLabel();
         search_txt = new javax.swing.JTextField();
         search_btn = new javax.swing.JButton();
-        secoundyear_lbl = new javax.swing.JLabel();
-        specialization_lbl = new javax.swing.JLabel();
         fullName_lbl = new javax.swing.JLabel();
         mobileNumber_lbl = new javax.swing.JLabel();
         homeNumber_lbl = new javax.swing.JLabel();
         sEmail_lbl = new javax.swing.JLabel();
-        startDate_lbl = new javax.swing.JLabel();
         supervisorEmail_lbl = new javax.swing.JLabel();
+        stYearselection = new javax.swing.JComboBox<>();
+        stClaenderYear_jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        stPeriodYear_jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        stStartdate_jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        stSpecialization_jComboBox1 = new javax.swing.JComboBox<>();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -155,9 +155,19 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
 
         update_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         update_btn.setText("Update");
+        update_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_btnActionPerformed(evt);
+            }
+        });
 
         delete_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         delete_btn.setText("Delete");
+        delete_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -186,7 +196,30 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                 .addGap(30, 30, 30))
         );
 
+        search_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                search_txtKeyReleased(evt);
+            }
+        });
+
         search_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search-24.png"))); // NOI18N
+        search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_btnActionPerformed(evt);
+            }
+        });
+
+        stYearselection.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        stYearselection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year 1st Semester ", "1st Year 2nd Semester  ", " ", "2nd Year 1st Semester ", "2nd Year 2nd Semester  ", " ", "3rd Year 1st Semester ", "3rd Year 2nd Semester  ", " ", "4th Year 1st Semester ", "4th Year 2nd Semeste r" }));
+
+        stClaenderYear_jDateChooser1.setDateFormatString("dd-MM-yyyy");
+
+        stPeriodYear_jDateChooser2.setDateFormatString("dd-MM-yyyy");
+
+        stStartdate_jDateChooser3.setDateFormatString("dd-MM-yyyy");
+
+        stSpecialization_jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        stSpecialization_jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Information Technology.", " ", "Computer systems & network engineering.", " ", "Software Engineering.", " ", "Information Systems Engineering.", " ", "Cyber Security.", " ", "Interactive Media.", " ", "Data Science.", " ", "Bachelor of Information Technology – Curtin University." }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -198,17 +231,19 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(stSpecialization_txt)
+                            .addComponent(stSpecialization_jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(stStartdate_jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(stPeriodYear_jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(stClaenderYear_jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(stYearselection, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(573, 573, 573)
                                 .addComponent(sID_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(487, 487, 487)
-                                .addComponent(currentyear_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(714, 714, 714))
                             .addComponent(stSliitID_txt)
-                            .addComponent(stCurrentYear_txt, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
@@ -217,18 +252,13 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                                 .addComponent(search_btn))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(338, 338, 338)
-                                .addComponent(calenderyear_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(568, 568, 568))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(321, 321, 321)
-                                .addComponent(secoundyear_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(stClaenderYear_txt, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(stPeriodYear_txt, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGap(551, 551, 551))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(669, 669, 669)
-                                .addComponent(specialization_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(899, 899, 899))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(696, 696, 696)
@@ -247,14 +277,12 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                                 .addComponent(sEmail_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(450, 450, 450)
-                                .addComponent(startDate_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(680, 680, 680))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(355, 355, 355)
                                 .addComponent(supervisorEmail_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(stSupervisorEmail_txt)
-                            .addComponent(stStartdate_txt)
                             .addComponent(stEmail_txt)
                             .addComponent(stHomeNumber_txt)
                             .addComponent(stMobileNumber_txt)
@@ -277,29 +305,21 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(stSliitID_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(currentyear_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stCurrentYear_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(stYearselection, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(calenderyear_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stClaenderYear_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(stClaenderYear_jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(secoundyear_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stPeriodYear_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(stPeriodYear_jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(specialization_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stSpecialization_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(stSpecialization_jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -325,11 +345,9 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(stEmail_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(startDate_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stStartdate_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(stStartdate_jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -359,52 +377,14 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
 
     private void back_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_BtnActionPerformed
 
-//        if (sd == null) {
-//
-//            MainDesktoppane.removeAll();
-//            Student_DashBoard dboard = new Student_DashBoard();
-//            MainDesktoppane.add(dboard).setVisible(true);
-//
-//            dboard.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
-//            dboard.setLocation(0, 0);
-//
-//        } else {
-//
-//            MainDesktoppane.removeAll();
-//            MainDesktoppane.add(sd).setVisible(true);
-//
-//            sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
-//            sd.setLocation(0, 0);
-//        }
-    }//GEN-LAST:event_back_BtnActionPerformed
-
-    private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
-
-        stSliitID_txt.setText("");
-        stCurrentYear_txt.setText("");
-        stClaenderYear_txt.setText("");
-        stPeriodYear_txt.setText("");
-        stSpecialization_txt.setText("");
-        stNameInitial_txt.setText("");
-        stMobileNumber_txt.setText("");
-        stHomeNumber_txt.setText("");
-        stEmail_txt.setText("");
-        stStartdate_txt.setText("");
-        stSupervisorEmail_txt.setText("");
-
-
-    }//GEN-LAST:event_reset_btnActionPerformed
-
-    private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
-
         if (sd == null) {
 
             MainDesktoppane.removeAll();
-            Student_DashBoard dboard = new Student_DashBoard();
-            MainDesktoppane.add(dboard).setVisible(true);
+            B_System_Loggin_Inerfaces.LogginPage lp = new B_System_Loggin_Inerfaces.LogginPage();
+            MainDesktoppane.add(lp).setVisible(true);
 
-            dboard.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
-            dboard.setLocation(0, 0);
+            lp.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            lp.setLocation(0, 0);
 
         } else {
 
@@ -414,15 +394,196 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
             sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
             sd.setLocation(0, 0);
         }
+    }//GEN-LAST:event_back_BtnActionPerformed
+
+    private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
+
+        stSliitID_txt.setText("");
+        stYearselection.setSelectedItem(""); //to dropdown
+        stClaenderYear_jDateChooser1.setToolTipText(""); //calender 1
+        stPeriodYear_jDateChooser2.setToolTipText(""); //calender 2
+        stSpecialization_jComboBox1.setSelectedItem(""); //dropdown
+        stNameInitial_txt.setText("");
+        stMobileNumber_txt.setText("");
+        stHomeNumber_txt.setText("");
+        stEmail_txt.setText("");
+        stStartdate_jDateChooser3.setToolTipText("");
+        stSupervisorEmail_txt.setText("");
+
+    }//GEN-LAST:event_reset_btnActionPerformed
+
+    private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
+
+        String stID = stSliitID_txt.getText().trim();
+        String stCurrentyear = stYearselection.getSelectedItem().toString().trim(); //to dropdown
+
+        SimpleDateFormat dateFormate = new SimpleDateFormat("dd-MM-yyyy");
+        String staddDate1 = dateFormate.format(stClaenderYear_jDateChooser1.getDate()).trim(); //date 1
+        String staddDate2 = dateFormate.format(stPeriodYear_jDateChooser2.getDate()).trim(); //date 2
+
+        String stSpeci = stSpecialization_jComboBox1.getSelectedItem().toString().trim(); //drop down
+        String stNameInitial = stNameInitial_txt.getText().trim();
+        String stMobile = stMobileNumber_txt.getText().trim();
+        String stHome = stHomeNumber_txt.getText().trim();
+        String stEmail = stEmail_txt.getText().trim();
+
+        String staddDate3 = dateFormate.format(stStartdate_jDateChooser3.getDate()).trim(); //date 3
+        String stSuEmail = stSupervisorEmail_txt.getText().trim();
+
+        try {
+
+            if (stID.equals("") || stCurrentyear.equals("") || staddDate1.equals("") || staddDate2.equals("") || stSpeci.equals("") || stNameInitial.equals("") || stMobile.equals("") || stHome.equals("") || stEmail.equals("") || staddDate3.equals("") || stSuEmail.equals("")) {
+                JOptionPane.showMessageDialog(null, "Please fill all the FIELDS");
+            }
+
+            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO studentregistation_formi1a_part_2(sliitID, currentYear, calenderYear, periodYear, specialization, fName, "
+                    + "mobileNumber, homeMobileNumber, sEmail, startDate, supervisoEmail) "
+                    + "VALUE ('" + stID + "','" + stCurrentyear + "','" + staddDate1 + "','" + staddDate2 + "','" + stSpeci + "' ,'" + stNameInitial + "' ,'" + stMobile + "' ,"
+                    + "'" + stHome + "', '" + stEmail + "', '" + staddDate3 + "', '" + stSuEmail + "')");
+
+            stSliitID_txt.setText("");
+            stYearselection.setSelectedItem("");
+            stClaenderYear_jDateChooser1.setToolTipText("");
+            stPeriodYear_jDateChooser2.setToolTipText("");
+            stSpecialization_jComboBox1.setSelectedItem("");
+            stNameInitial_txt.setText("");
+            stMobileNumber_txt.setText("");
+            stHomeNumber_txt.setText("");
+            stEmail_txt.setText("");
+            stStartdate_jDateChooser3.setToolTipText("");
+            stSupervisorEmail_txt.setText("");
+
+            JOptionPane.showMessageDialog(null, "SUBMIT Successful");
+
+            if (sd == null) {
+
+                MainDesktoppane.removeAll();
+                B_System_Loggin_Inerfaces.LogginPage lp = new B_System_Loggin_Inerfaces.LogginPage();
+                MainDesktoppane.add(lp).setVisible(true);
+
+                lp.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+                lp.setLocation(0, 0);
+
+            } else {
+
+                MainDesktoppane.removeAll();
+                MainDesktoppane.add(sd).setVisible(true);
+
+                sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+                sd.setLocation(0, 0);
+            }
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "SUBMIT unSuccessful");
+            JOptionPane.showMessageDialog(null, e);
+
+        }
+
+
     }//GEN-LAST:event_submit_btnActionPerformed
 
+    private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
+
+        int u = JOptionPane.showConfirmDialog(null, "If you really want to UPDATE?");
+
+        if (u == 0) {
+
+            String stID = stSliitID_txt.getText().trim();
+            String stCurrentyear = stYearselection.getSelectedItem().toString(); //to dropdown
+
+            SimpleDateFormat dateFormate = new SimpleDateFormat("dd-MM-yyyy");
+            String staddDate1 = dateFormate.format(stClaenderYear_jDateChooser1.getDate()); //date 1
+            String staddDate2 = dateFormate.format(stPeriodYear_jDateChooser2.getDate()); //date 2
+
+            String stSpeci = stSpecialization_jComboBox1.getSelectedItem().toString(); //drop down
+            String stNameInitial = stNameInitial_txt.getText().trim();
+            String stMobile = stMobileNumber_txt.getText().trim();
+            String stHome = stHomeNumber_txt.getText().trim();
+            String stEmail = stEmail_txt.getText().trim();
+
+            String staddDate3 = dateFormate.format(stStartdate_jDateChooser3.getDate()); //date 3
+            String stSuEmail = stSupervisorEmail_txt.getText().trim();
+
+            try {
+
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_formi1a_part_2 SET sliitID = '" + stID + "', currentYear = '" + stCurrentyear + "',"
+                        + " calenderYear = '" + staddDate1 + "', periodYear = '" + staddDate2 + "' ,specialization = '" + stSpeci + "' ,"
+                        + "fName = '" + stNameInitial + "' , mobileNumber = '" + stMobile + "' ,  homeMobileNumber = '" + stHome + "', sEmail = '" + stEmail + "', startDate = '" + staddDate3 + "',supervisoEmail = '" + stSuEmail + "'  WHERE sliitID = '" + stID + "'");
+
+                stSliitID_txt.setText("");
+                stYearselection.setSelectedItem("");
+                stClaenderYear_jDateChooser1.setToolTipText("");
+                stPeriodYear_jDateChooser2.setToolTipText("");
+                stSpecialization_jComboBox1.setSelectedItem("");
+                stNameInitial_txt.setText("");
+                stMobileNumber_txt.setText("");
+                stHomeNumber_txt.setText("");
+                stEmail_txt.setText("");
+                stStartdate_jDateChooser3.setToolTipText("");
+                stSupervisorEmail_txt.setText("");
+
+                search_txt.setText("");
+
+                JOptionPane.showMessageDialog(null, "Update Successfully");
+
+            } catch (SQLException ex) {
+
+                JOptionPane.showMessageDialog(null, "Update Unsuccessfully");
+                JOptionPane.showMessageDialog(rootPane, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Have a Good Day!");
+        }
+    }//GEN-LAST:event_update_btnActionPerformed
+
+    private void search_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_txtKeyReleased
+        search();
+    }//GEN-LAST:event_search_txtKeyReleased
+
+    private void search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_btnActionPerformed
+        search();
+    }//GEN-LAST:event_search_btnActionPerformed
+
+    private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
+
+        int p = JOptionPane.showConfirmDialog(null, "If you really want to the DELETE");
+
+        if (p == 0) {
+
+            String sid = stSliitID_txt.getText();
+            try {
+                DBconnect.connect().createStatement().executeUpdate("DELETE FROM studentregistation_formi1a_part_2 WHERE sliitID = '" + sid + "'");
+                JOptionPane.showMessageDialog(null, "DELETE Successfull");
+
+                stSliitID_txt.setText("");
+                stYearselection.setSelectedItem("");
+                stClaenderYear_jDateChooser1.setToolTipText("");
+                stPeriodYear_jDateChooser2.setToolTipText("");
+                stSpecialization_jComboBox1.setSelectedItem("");
+                stNameInitial_txt.setText("");
+                stMobileNumber_txt.setText("");
+                stHomeNumber_txt.setText("");
+                stEmail_txt.setText("");
+                stStartdate_jDateChooser3.setToolTipText("");
+                stSupervisorEmail_txt.setText("");
+
+                search_txt.setText("");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Cancel The Request");
+        }
+    }//GEN-LAST:event_delete_btnActionPerformed
+
     //To existing object checker
-    Student_DashBoard sd;
+    B_System_Loggin_Inerfaces.LogginPage sd;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_Btn;
-    private javax.swing.JLabel calenderyear_lbl;
-    private javax.swing.JLabel currentyear_lbl;
     private javax.swing.JButton delete_btn;
     private javax.swing.JLabel fullName_lbl;
     private javax.swing.JPanel header;
@@ -448,22 +609,47 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
     private javax.swing.JLabel sID_lbl;
     private javax.swing.JButton search_btn;
     private javax.swing.JTextField search_txt;
-    private javax.swing.JLabel secoundyear_lbl;
-    private javax.swing.JLabel specialization_lbl;
-    private javax.swing.JTextField stClaenderYear_txt;
-    private javax.swing.JTextField stCurrentYear_txt;
+    private com.toedter.calendar.JDateChooser stClaenderYear_jDateChooser1;
     private javax.swing.JTextField stEmail_txt;
     private javax.swing.JTextField stHomeNumber_txt;
     private javax.swing.JTextField stMobileNumber_txt;
     private javax.swing.JTextField stNameInitial_txt;
-    private javax.swing.JTextField stPeriodYear_txt;
+    private com.toedter.calendar.JDateChooser stPeriodYear_jDateChooser2;
     private javax.swing.JTextField stSliitID_txt;
-    private javax.swing.JTextField stSpecialization_txt;
-    private javax.swing.JTextField stStartdate_txt;
+    private javax.swing.JComboBox<String> stSpecialization_jComboBox1;
+    private com.toedter.calendar.JDateChooser stStartdate_jDateChooser3;
     private javax.swing.JTextField stSupervisorEmail_txt;
-    private javax.swing.JLabel startDate_lbl;
+    private javax.swing.JComboBox<String> stYearselection;
     private javax.swing.JButton submit_btn;
     private javax.swing.JLabel supervisorEmail_lbl;
     private javax.swing.JButton update_btn;
     // End of variables declaration//GEN-END:variables
+
+    private void search() {
+
+        try {
+            ResultSet rs = A_DataBase.DBconnect.connect().createStatement().executeQuery("select * from studentregistation_formi1a_part_2 where  sliitID ='" + search_txt.getText() + "'");
+            if (rs.next()) {
+
+                stSliitID_txt.setText(rs.getString("sliitID"));
+                stYearselection.setSelectedItem(rs.getString("currentYear")); //drop down
+                stClaenderYear_jDateChooser1.setToolTipText(rs.getString("calenderYear"));
+                stPeriodYear_jDateChooser2.setToolTipText(rs.getString("periodYear")); //calender
+                stSpecialization_jComboBox1.setSelectedItem(rs.getString("specialization")); //drop down
+                stNameInitial_txt.setText(rs.getString("fName"));
+                stMobileNumber_txt.setText(rs.getString("mobileNumber"));
+                stHomeNumber_txt.setText(rs.getString("homeMobileNumber"));
+                stEmail_txt.setText(rs.getString("sEmail"));
+                stStartdate_jDateChooser3.setToolTipText(rs.getString("startDate"));//calender
+                stSupervisorEmail_txt.setText(rs.getString("supervisoEmail"));
+
+            } else {
+                search_txt.grabFocus();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
