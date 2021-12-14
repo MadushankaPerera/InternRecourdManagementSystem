@@ -6,6 +6,8 @@
 package D_System_Forms_and_Dashboard_Interfaces;
 
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,23 +42,23 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        firstName_txt = new javax.swing.JTextField();
-        firstName_txt1 = new javax.swing.JTextField();
-        firstName_txt2 = new javax.swing.JTextField();
-        firstName_txt3 = new javax.swing.JTextField();
-        firstName_txt4 = new javax.swing.JTextField();
-        firstName_txt5 = new javax.swing.JTextField();
+        suF_sliitID_txt = new javax.swing.JTextField();
+        suF_internshipTitle_txt = new javax.swing.JTextField();
+        suFfreqSubmit_txt = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        firstName_txt6 = new javax.swing.JTextField();
-        firstName_txt7 = new javax.swing.JTextField();
+        suFtask_txt = new javax.swing.JTextField();
+        suFoverall_txt = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        firstName_txt8 = new javax.swing.JTextField();
+        suFeMail_txt = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         reset_btn = new javax.swing.JButton();
         submit_btn = new javax.swing.JButton();
+        suF_company_jComboBox1 = new javax.swing.JComboBox<>();
+        suFfromdate_jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        suFtoDate_jDateChooser2 = new com.toedter.calendar.JDateChooser();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -85,8 +87,8 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
                 .addContainerGap()
                 .addComponent(back_Btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 908, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,9 +136,15 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        jCheckBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jCheckBox1KeyPressed(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        reset_btn.setBackground(new java.awt.Color(255, 255, 255));
         reset_btn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         reset_btn.setText("Reset");
         reset_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +153,7 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
             }
         });
 
-        submit_btn.setBackground(new java.awt.Color(51, 204, 0));
+        submit_btn.setBackground(new java.awt.Color(255, 255, 255));
         submit_btn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         submit_btn.setText("Submit");
         submit_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -159,21 +167,23 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(290, 290, 290)
+                .addGap(268, 268, 268)
                 .addComponent(reset_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(102, 102, 102)
                 .addComponent(submit_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(196, 196, 196))
+                .addGap(218, 218, 218))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reset_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(submit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
+
+        suF_company_jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -182,13 +192,13 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(suFfromdate_jDateChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(suF_company_jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(firstName_txt)
-                    .addComponent(firstName_txt4)
-                    .addComponent(firstName_txt5)
-                    .addComponent(firstName_txt6)
-                    .addComponent(firstName_txt7)
-                    .addComponent(firstName_txt8)
+                    .addComponent(suFfreqSubmit_txt)
+                    .addComponent(suFtask_txt)
+                    .addComponent(suFoverall_txt)
+                    .addComponent(suFeMail_txt)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(763, 763, 763))
@@ -211,7 +221,7 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
                         .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(543, 543, 543))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
                         .addGap(277, 277, 277))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -223,10 +233,10 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
                         .addGap(18, 18, 18)
                         .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(460, 460, 460))
-                    .addComponent(firstName_txt2)
-                    .addComponent(firstName_txt3)
+                    .addComponent(suF_internshipTitle_txt)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(firstName_txt1))
+                    .addComponent(suF_sliitID_txt)
+                    .addComponent(suFtoDate_jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -237,46 +247,46 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
                 .addGap(28, 28, 28)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addComponent(suF_sliitID_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addGap(3, 3, 3)
-                .addComponent(firstName_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(suF_company_jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(firstName_txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(suF_internshipTitle_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(suFfromdate_jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(suFtoDate_jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(suFfreqSubmit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(suFtask_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(suFoverall_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstName_txt8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(suFeMail_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -322,25 +332,71 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
 
     private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
 
+        suF_company_jComboBox1.setSelectedItem("");
+        suF_internshipTitle_txt.setText("");
+        suF_sliitID_txt.setText("");
+        suFeMail_txt.setText("");
+        suFfreqSubmit_txt.setText("");
+        suFfromdate_jDateChooser1.setToolTipText("");
+        suFoverall_txt.setText("");
+        suFtask_txt.setText("");
+        suFtoDate_jDateChooser2.setToolTipText("");
+
+
     }//GEN-LAST:event_reset_btnActionPerformed
 
     private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
 
+        String suF_id = suF_sliitID_txt.getText().trim();
+        String suF_company = suF_company_jComboBox1.getSelectedItem().toString();
+        String suF_title = suF_internshipTitle_txt.getText();
+
+        SimpleDateFormat dateFormate = new SimpleDateFormat("dd-MM-yyyy");
+        String staddDate1 = dateFormate.format(suFfromdate_jDateChooser1.getDate()).trim(); //date 1
+        String staddDate2 = dateFormate.format(suFtoDate_jDateChooser2.getDate()).trim(); //date 2
+
+        String suFsubmitt = suFfreqSubmit_txt.getText();
+        String suF_task = suFtask_txt.getText();
+        String suF_overall = suFoverall_txt.getText().trim();
+        String suF_mail = suFeMail_txt.getText().trim();
+
+        try {
+
+            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO supervisor_feedback_and_approval_formi3a(sliitID, title, companyName, date1, date2, submit, task,overall, mail) VALUE ('" + suF_id + "','" + suF_title + "','" + suF_company + "','" + staddDate1 + "','" + staddDate2 + "','" + suFsubmitt + "','" + suF_task + "','" + suF_overall + "','" + suF_mail + "')");
+
+            suF_company_jComboBox1.setSelectedItem("");
+            suF_internshipTitle_txt.setText("");
+            suF_sliitID_txt.setText("");
+            suFeMail_txt.setText("");
+            suFfreqSubmit_txt.setText("");
+            suFfromdate_jDateChooser1.setToolTipText("");
+            suFoverall_txt.setText("");
+            suFtask_txt.setText("");
+            suFtoDate_jDateChooser2.setToolTipText("");
+
+            JOptionPane.showMessageDialog(null, "SUBMIT Successful");
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "SUBMIT unSuccessful");
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+
     }//GEN-LAST:event_submit_btnActionPerformed
+
+    private void jCheckBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox1KeyPressed
+
+        if (jCheckBox1.isSelected() == true) {
+
+            submit_btn.setEnabled(true);
+        }
+    }//GEN-LAST:event_jCheckBox1KeyPressed
 
     Supervisor_DashBoard sd;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_Btn;
-    private javax.swing.JTextField firstName_txt;
-    private javax.swing.JTextField firstName_txt1;
-    private javax.swing.JTextField firstName_txt2;
-    private javax.swing.JTextField firstName_txt3;
-    private javax.swing.JTextField firstName_txt4;
-    private javax.swing.JTextField firstName_txt5;
-    private javax.swing.JTextField firstName_txt6;
-    private javax.swing.JTextField firstName_txt7;
-    private javax.swing.JTextField firstName_txt8;
     private javax.swing.JPanel header;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel10;
@@ -358,6 +414,15 @@ public class FormI3A_Approval_Supervisor_feedback extends javax.swing.JInternalF
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton reset_btn;
+    private javax.swing.JComboBox<String> suF_company_jComboBox1;
+    private javax.swing.JTextField suF_internshipTitle_txt;
+    private javax.swing.JTextField suF_sliitID_txt;
+    private javax.swing.JTextField suFeMail_txt;
+    private javax.swing.JTextField suFfreqSubmit_txt;
+    private com.toedter.calendar.JDateChooser suFfromdate_jDateChooser1;
+    private javax.swing.JTextField suFoverall_txt;
+    private javax.swing.JTextField suFtask_txt;
+    private com.toedter.calendar.JDateChooser suFtoDate_jDateChooser2;
     private javax.swing.JButton submit_btn;
     // End of variables declaration//GEN-END:variables
 }
