@@ -8,6 +8,8 @@ package B_System_Loggin_Inerfaces;
 import A_DataBase.DBconnect;
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
 import java.awt.Color;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -70,6 +72,8 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         val_pasword = new javax.swing.JLabel();
         val_ConfirmPassword = new javax.swing.JLabel();
         option_txt = new javax.swing.JTextField();
+        searchbar_txt = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setAutoscrolls(true);
@@ -101,7 +105,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(back_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 929, Short.MAX_VALUE)
                 .addContainerGap())
         );
         headerLayout.setVerticalGroup(
@@ -145,12 +149,6 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Name                    :");
-
-        supervisorName_txt.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                supervisorName_txtKeyReleased(evt);
-            }
-        });
 
         supervisorTitle_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -395,6 +393,14 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        searchbar_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchbar_txtKeyReleased(evt);
+            }
+        });
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search-24.png"))); // NOI18N
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -402,8 +408,13 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(body, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(searchbar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2))
+                    .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         mainPanelLayout.setVerticalGroup(
@@ -411,9 +422,13 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(searchbar_txt)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(35, 35, 35))
         );
 
         jScrollPane1.setViewportView(mainPanel);
@@ -426,35 +441,35 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 944, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void back_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_BtnActionPerformed
-        
+
         if (s3 == null) {
-            
+
             MainDesktoppane.removeAll();
             B_System_Loggin_Inerfaces.RegistationType rtype = new B_System_Loggin_Inerfaces.RegistationType();
             MainDesktoppane.add(rtype).setVisible(true);
-            
+
             rtype.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
             rtype.setLocation(0, 0);
-            
+
         } else {
-            
+
             MainDesktoppane.removeAll();
             MainDesktoppane.add(s3).setVisible(true);
-            
+
             s3.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
             s3.setLocation(0, 0);
         }
     }//GEN-LAST:event_back_BtnActionPerformed
 
     private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
-        
+
         String suName = supervisorName_txt.getText().trim();
         String suTitle = supervisorTitle_txt.getText().trim();
         String suCompanyName = companyName_txt.getText().trim();
@@ -464,11 +479,11 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         String suPassword = password_txt.getText().trim();
         String suConformPassword = confirmePassword_txt.getText().trim();
         String option = option_txt.getText().trim();
-        
+
         try {
-            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO supervisorregistation(supervisoerName, supervisorTitle, companyName, contactNumber, supervisorMail_1, supervisorMail_2, password, confirmPassword, options) VALUE ('" + suName + "','" + suTitle + "','" + suCompanyName + "','" + suContactnumber + "','" + suEmail1 + "' ,'" + suEmail2 + "' ,'" + suPassword + "' ,'" + suConformPassword + "', '"+option+"')");
+            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO supervisorregistation(supervisoerName, supervisorTitle, companyName, contactNumber, supervisorMail_1, supervisorMail_2, password, confirmPassword, options) VALUE ('" + suName + "','" + suTitle + "','" + suCompanyName + "','" + suContactnumber + "','" + suEmail1 + "' ,'" + suEmail2 + "' ,'" + suPassword + "' ,'" + suConformPassword + "', '" + option + "')");
             JOptionPane.showMessageDialog(null, "SUBMIT Successful");
-            
+
             supervisorName_txt.setText("");
             supervisorTitle_txt.setText("");
             companyName_txt.setText("");
@@ -477,13 +492,12 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
             email2_txt.setText("");
             password_txt.setText("");
             confirmePassword_txt.setText("");
-            
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
             JOptionPane.showMessageDialog(null, "SUBMIT unSuccessful");
         }
-        
+
 
     }//GEN-LAST:event_submit_btnActionPerformed
 
@@ -494,10 +508,10 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         companyName_txt.setText("");
         contactNumber_txt.setText("");
         email1_txt.setText("");
-        email2_txt.setText(""); 
+        email2_txt.setText("");
         password_txt.setText("");
         confirmePassword_txt.setText("");
-       
+
     }//GEN-LAST:event_Reset_btnActionPerformed
 
     private void supervisorTitle_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supervisorTitle_txtKeyReleased
@@ -506,10 +520,10 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         String PATTERN = "^[a-zA-Z  .]{0,50}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(supervisorTitle_txt.getText());
-        
+
         if (!match.matches()) {
             val_SupervisorTitle_lbl.setText("Enterd title is Incorrect! ");
-            
+
         } else {
             val_SupervisorTitle_lbl.setText(null);
         }
@@ -521,29 +535,14 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         String PATTERN = "^[a-zA-Z ./()]{0,200}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(companyName_txt.getText());
-        
+
         if (!match.matches()) {
             val_CompanyName_lbl.setText("Enterd Company NameType Incorrect! ");
-            
+
         } else {
             val_CompanyName_lbl.setText(null);
         }
     }//GEN-LAST:event_companyName_txtKeyReleased
-
-    private void supervisorName_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supervisorName_txtKeyReleased
-
-        //for Validation supervisorName
-        String PATTERN = "^[a-zA-Z  .]{0,50}$";
-        Pattern patt = Pattern.compile(PATTERN);
-        Matcher match = patt.matcher(supervisorName_txt.getText());
-        
-        if (!match.matches()) {
-            val_name_lbl.setText("Enterd Name type is Incorrect! ");
-            
-        } else {
-            val_name_lbl.setText(null);
-        }
-    }//GEN-LAST:event_supervisorName_txtKeyReleased
 
     private void contactNumber_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_contactNumber_txtKeyReleased
 
@@ -551,10 +550,10 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         String PATTERN = "^[0-9 +]{0,20}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(contactNumber_txt.getText());
-        
+
         if (!match.matches()) {
             val_ContactNumber_lbl.setText("Enterd Contact Number Incorrect! ");
-            
+
         } else {
             val_ContactNumber_lbl.setText(null);
         }
@@ -566,10 +565,10 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         String PATTERN = "[a-zA-Z0-9 .@]{0,50}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(email1_txt.getText());
-        
+
         if (!match.matches()) {
             val_SupervisorEmail1_lbl.setText("Enterd SLIIT E-Mail is Incorrect! ");
-            
+
         } else {
             val_SupervisorEmail1_lbl.setText(null);
         }
@@ -581,10 +580,10 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         String PATTERN = "[a-zA-Z0-9 .@]{0,50}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(email2_txt.getText());
-        
+
         if (!match.matches()) {
             val_SupervisorEmail2_lbl.setText("Enterd SLIIT E-Mail is Incorrect! ");
-            
+
         } else {
             val_SupervisorEmail2_lbl.setText(null);
         }
@@ -596,59 +595,21 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         String PATTERN = "^[a-zA-Z0-9]{0,2}[a-zA-Z0-9]{0,5}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(password_txt.getText());
-        
+
         if (match.matches()) {
             val_pasword.setText("Week Password");
             val_pasword.setForeground(Color.red);
-            
+
         } else if (!match.matches()) {
             val_pasword.setText("Strong Password");
             val_pasword.setForeground(Color.blue);
-            
+
         } else {
             val_pasword.setText(null);
         }
     }//GEN-LAST:event_password_txtKeyReleased
 
     private void confirmePassword_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confirmePassword_txtKeyReleased
-
-//        String vc = password_txt.getText();
-//
-//        if (confirmePassword_txt.equals(vc)) {
-//            val_ConfirmPassword.setText("Password Matched");
-//            val_ConfirmPassword.setForeground(Color.blue);
-//        } else {
-//            val_ConfirmPassword.setText("Passowrd NOT Match");
-//            val_ConfirmPassword.setForeground(Color.RED);
-//        }
-//        
-//        
-        
-
-//        try {
-//            if (vc.equals(confirmePassword_txt)) {  //check filds
-//
-//                //for Validation SLIIT confiromPassword
-//                String PATTERN = "^[a-zA-Z0-9]{0,30}$";
-//                Pattern patt = Pattern.compile(PATTERN);
-//                Matcher match = patt.matcher(confirmePassword_txt.getText());
-//
-//                if (!match.matches()) {
-//                    val_ConfirmPassword.setText("Passowrd NOT Match");
-//                    val_ConfirmPassword.setForeground(Color.RED);
-//
-//                } else if (match.matches()) {
-//                    val_ConfirmPassword.setText("Password Matched");
-//                    val_ConfirmPassword.setForeground(Color.blue);
-//
-//                } else {
-//                    val_ConfirmPassword.setText("");
-//                }
-//            }
-//        } catch (Exception e) {
-//            val_ConfirmPassword.setText("Passowrd NOT Match");
-//            val_ConfirmPassword.setForeground(Color.RED);
-//        }
 
     }//GEN-LAST:event_confirmePassword_txtKeyReleased
 
@@ -657,10 +618,55 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+        int u = JOptionPane.showConfirmDialog(null, "If you really want to UPDATE?");
+
+        if (u == 0) {
+
+            String suName = supervisorName_txt.getText().trim();
+            String suTitle = supervisorTitle_txt.getText().trim();
+            String suCompanyName = companyName_txt.getText().trim();
+            String suContactnumber = contactNumber_txt.getText().trim();
+            String suEmail1 = email1_txt.getText().trim();
+            String suEmail2 = email2_txt.getText().trim();
+            String suPassword = password_txt.getText().trim();
+            String suConformPassword = confirmePassword_txt.getText().trim();
+            // String option = option_txt.getText().trim();
+
+            try {
+
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE supervisorregistation SET supervisoerName = '" + suName + "', supervisorTitle = '" + suTitle + "',"
+                        + " companyName = '" + suCompanyName + "', contactNumber = '" + suContactnumber + "' ,supervisorMail_1 = '" + suEmail1 + "' ,"
+                        + "supervisorMail_2 = '" + suEmail2 + "' , password = '" + suPassword + "' ,  confirmPassword = '" + suConformPassword + "'  "
+                        + " WHERE supervisoerName = '" + suName + "'");
+
+                supervisorName_txt.setText("");
+                supervisorTitle_txt.setText("");
+                companyName_txt.setText("");
+                contactNumber_txt.setText("");
+                email1_txt.setText("");
+                email2_txt.setText("");
+                password_txt.setText("");
+                confirmePassword_txt.setText("");
+
+                searchbar_txt.setText("");
+
+                JOptionPane.showMessageDialog(null, "Update Successfully");
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Update Unsuccessfully");
+                JOptionPane.showMessageDialog(rootPane, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Have a Good Day!");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    //To existing object checker
+    private void searchbar_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchbar_txtKeyReleased
+        search();
+    }//GEN-LAST:event_searchbar_txtKeyReleased
+
+//To existing object checker
     RegistationType s3;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Reset_btn;
@@ -673,6 +679,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     private javax.swing.JTextField email2_txt;
     private javax.swing.JPanel header;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -688,6 +695,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField option_txt;
     public javax.swing.JPasswordField password_txt;
+    private javax.swing.JTextField searchbar_txt;
     private javax.swing.JButton submit_btn;
     private javax.swing.JTextField supervisorName_txt;
     private javax.swing.JTextField supervisorTitle_txt;
@@ -700,4 +708,29 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     private javax.swing.JLabel val_name_lbl;
     private javax.swing.JLabel val_pasword;
     // End of variables declaration//GEN-END:variables
+
+    private void search() {
+
+        try {
+            ResultSet rs = A_DataBase.DBconnect.connect().createStatement().executeQuery("select * from supervisorregistation where  supervisoerName ='" + searchbar_txt.getText() + "'");
+            if (rs.next()) {
+
+                supervisorName_txt.setText(rs.getString("supervisoerName"));
+                supervisorTitle_txt.setText(rs.getString("supervisorTitle"));
+                companyName_txt.setText(rs.getString("companyName"));
+                contactNumber_txt.setText(rs.getString("contactNumber"));
+                email1_txt.setText(rs.getString("supervisorMail_1"));
+                email2_txt.setText(rs.getString("supervisorMail_2"));
+                password_txt.setText(rs.getString("password"));
+                confirmePassword_txt.setText(rs.getString("confirmPassword"));
+
+            } else {
+                searchbar_txt.grabFocus();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
