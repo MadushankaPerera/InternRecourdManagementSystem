@@ -62,8 +62,8 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         Reset_btn = new javax.swing.JButton();
         submit_btn = new javax.swing.JButton();
+        update_btn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
         val_SupervisorTitle_lbl = new javax.swing.JLabel();
         val_CompanyName_lbl = new javax.swing.JLabel();
         val_ContactNumber_lbl = new javax.swing.JLabel();
@@ -73,7 +73,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         val_ConfirmPassword = new javax.swing.JLabel();
         option_txt = new javax.swing.JTextField();
         searchbar_txt = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        search_btn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setAutoscrolls(true);
@@ -208,19 +208,19 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Update ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        update_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        update_btn.setText("Update ");
+        update_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                update_btnActionPerformed(evt);
             }
         });
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton1.setText("Delete");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setText("Delete");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -231,24 +231,24 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Reset_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(59, 59, 59)
+                .addGap(99, 99, 99)
                 .addComponent(submit_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(85, 85, 85)
+                .addGap(89, 89, 89)
+                .addComponent(update_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(81, 81, 81)
                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(48, 48, 48)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Reset_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         val_SupervisorTitle_lbl.setBackground(new java.awt.Color(0, 0, 0));
@@ -399,7 +399,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search-24.png"))); // NOI18N
+        search_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search-24.png"))); // NOI18N
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -412,7 +412,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(searchbar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
+                        .addComponent(search_btn))
                     .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -425,7 +425,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(searchbar_txt)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
+                    .addComponent(search_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
@@ -481,6 +481,11 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         String option = option_txt.getText().trim();
 
         try {
+
+            if (suName.equals("") || suTitle.equals("") || suCompanyName.equals("") || suContactnumber.equals("") || suEmail1.equals("") || suEmail2.equals("") || suPassword.equals("") || suConformPassword.equals("")) {
+                JOptionPane.showMessageDialog(null, "Please fill all the FIELDS");
+            }
+
             A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO supervisorregistation(supervisoerName, supervisorTitle, companyName, contactNumber, supervisorMail_1, supervisorMail_2, password, confirmPassword, options) VALUE ('" + suName + "','" + suTitle + "','" + suCompanyName + "','" + suContactnumber + "','" + suEmail1 + "' ,'" + suEmail2 + "' ,'" + suPassword + "' ,'" + suConformPassword + "', '" + option + "')");
             JOptionPane.showMessageDialog(null, "SUBMIT Successful");
 
@@ -613,11 +618,7 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_confirmePassword_txtKeyReleased
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
 
         int u = JOptionPane.showConfirmDialog(null, "If you really want to UPDATE?");
 
@@ -660,11 +661,44 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Have a Good Day!");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_update_btnActionPerformed
 
     private void searchbar_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchbar_txtKeyReleased
         search();
     }//GEN-LAST:event_searchbar_txtKeyReleased
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        int p = JOptionPane.showConfirmDialog(null, "If you really want to the DELETE");
+
+        if (p == 0) {
+
+            String suid = searchbar_txt.getText();
+            try {
+                DBconnect.connect().createStatement().executeUpdate("DELETE FROM supervisorregistation WHERE supervisoerName = '" + suid + "'");
+                JOptionPane.showMessageDialog(null, "DELETE Successfull");
+
+                supervisorName_txt.setText("");
+                supervisorTitle_txt.setText("");
+                companyName_txt.setText("");
+                contactNumber_txt.setText("");
+                email1_txt.setText("");
+                email2_txt.setText("");
+                password_txt.setText("");
+                confirmePassword_txt.setText("");
+
+                searchbar_txt.setText("");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Cancel The Request");
+        }
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 //To existing object checker
     RegistationType s3;
@@ -679,7 +713,6 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     private javax.swing.JTextField email2_txt;
     private javax.swing.JPanel header;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -691,14 +724,15 @@ public class SupervisorReg extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField option_txt;
     public javax.swing.JPasswordField password_txt;
+    private javax.swing.JButton search_btn;
     private javax.swing.JTextField searchbar_txt;
     private javax.swing.JButton submit_btn;
     private javax.swing.JTextField supervisorName_txt;
     private javax.swing.JTextField supervisorTitle_txt;
+    private javax.swing.JButton update_btn;
     private javax.swing.JLabel val_CompanyName_lbl;
     private javax.swing.JLabel val_ConfirmPassword;
     private javax.swing.JLabel val_ContactNumber_lbl;

@@ -535,7 +535,8 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
                 sliitID_number.setText(null);
                 sliitEmail_address.setText(null);
                 yearSelectionDropDown.setSelectedItem(null);
-                jPasswordField1.setText(null);
+                jPasswordField1.setText("");
+                
 
             } catch (Exception e) {
                 e.printStackTrace();
