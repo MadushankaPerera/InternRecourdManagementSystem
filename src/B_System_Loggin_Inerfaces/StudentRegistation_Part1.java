@@ -13,6 +13,9 @@ import javax.swing.plaf.synth.ColorType;
 import jdk.nashorn.internal.parser.TokenType;
 import sun.security.util.Password;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -166,6 +169,11 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
 
         delete_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         delete_btn.setText("Delete");
+        delete_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BottomPanelLayout = new javax.swing.GroupLayout(BottomPanel);
         BottomPanel.setLayout(BottomPanelLayout);
@@ -402,6 +410,8 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         } else {
             valID_lbl.setText(null);
         }
+
+        search(); //call search function
     }//GEN-LAST:event_sliitID_numberKeyReleased
 
     private void sliitEmail_addressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sliitEmail_addressKeyReleased
@@ -486,8 +496,65 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
 
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
 
+        int u = JOptionPane.showConfirmDialog(null, "If you really want to UPDATE?");
+        System.out.println("pass1");
+        if (u == 0) {
+
+            System.out.println("pass2");
+
+            String sId = sliitID_number.getText();
+            System.out.println("pass3");
+
+            String sEmail = sliitEmail_address.getText();
+            System.out.println("pass4");
+            String sYear = yearSelectionDropDown.getSelectedItem().toString();
+            System.out.println("pass5");
+            String pss = jPasswordField1.getText();
+            System.out.println("pass6");
+            String option = optionstudent_txt.getText();
+            System.out.println("pass7");
+            try {
+                System.out.println("pass8");
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_part_1 SET sliitID = '" + sId + "', sliitEmail = '" + sEmail + "', currentYear = '" + sYear + "', createPassword = '" + pss + "' ,options = '" + option + "' WHERE sliitID = '" + sId + "'");
+
+                //A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_part_1 SET sliitID = '"+sId+"',currentYear='"+sYear+"',createPassword='"+pss+"',options='"+option+"' WHERE = sliitID '" + sId + "'");
+
+                JOptionPane.showMessageDialog(null, "Update Successfully");
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Update Unsuccessfully");
+                JOptionPane.showMessageDialog(rootPane, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Have a Good Day!");
+        }
 
     }//GEN-LAST:event_update_btnActionPerformed
+
+    private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
+
+        int p = JOptionPane.showConfirmDialog(null, "If you really want to the DELETE");
+
+        if (p == 0) {
+
+            String sid = sliitID_number.getText();
+            try {
+                DBconnect.connect().createStatement().executeUpdate("DELETE FROM studentregistation_part_1 WHERE sliitID = '" + sid + "'");
+                JOptionPane.showMessageDialog(null, "DELETE Successfull");
+
+                sliitID_number.setText(null);
+                sliitEmail_address.setText(null);
+                yearSelectionDropDown.setSelectedItem(null);
+                jPasswordField1.setText(null);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Cancel The Request");
+        }
+    }//GEN-LAST:event_delete_btnActionPerformed
 
     RegistationType rtp;
     FormI1A_StudentRegistation_Part2 stpye;
