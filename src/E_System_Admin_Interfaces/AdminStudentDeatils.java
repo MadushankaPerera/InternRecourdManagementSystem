@@ -415,6 +415,7 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Update Successfully");
 
                 SearchBar_txt.setText("");
+                show_tbl();
 
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Update Unsuccessfully");
@@ -490,6 +491,7 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                 stname_txt.setText("");
 
                 SearchBar_txt.setText("");
+                show_tbl();
 
             } catch (Exception e) {
                 e.printStackTrace();

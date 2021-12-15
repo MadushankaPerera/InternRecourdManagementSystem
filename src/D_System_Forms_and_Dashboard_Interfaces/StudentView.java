@@ -373,6 +373,7 @@ public class StudentView extends javax.swing.JInternalFrame {
 
     private void Search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search_btnActionPerformed
         search();
+        show_tbl();
     }//GEN-LAST:event_Search_btnActionPerformed
 
     Supervisor_DashBoard sd;
