@@ -13,15 +13,15 @@ import javax.swing.JOptionPane;
  * @author perer
  */
 public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame {
-
+    
     public FormI1A_StudentRegistation_Part2() {
         initComponents();
-
+        
         String sidpart_1 = B_System_Loggin_Inerfaces.StudentRegistation_Part1.sliitID_number.getText().toString();
         stSliitID_txt.setText(sidpart_1);
-
+        
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -403,28 +403,28 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
 //    }
 
     private void back_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_BtnActionPerformed
-
+        
         if (sd == null) {
-
+            
             MainDesktoppane.removeAll();
             B_System_Loggin_Inerfaces.LogginPage lp = new B_System_Loggin_Inerfaces.LogginPage();
             MainDesktoppane.add(lp).setVisible(true);
-
+            
             lp.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
             lp.setLocation(0, 0);
-
+            
         } else {
-
+            
             MainDesktoppane.removeAll();
             MainDesktoppane.add(sd).setVisible(true);
-
+            
             sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
             sd.setLocation(0, 0);
         }
     }//GEN-LAST:event_back_BtnActionPerformed
 
     private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
-
+        
         stSliitID_txt.setText("");
         stYearselection.setSelectedItem(""); //to dropdown
         stClaenderYear_jDateChooser1.setToolTipText(""); //calender 1
@@ -436,11 +436,11 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
         stEmail_txt.setText("");
         stStartdate_jDateChooser3.setToolTipText("");
         stSupervisorEmail_txt.setText("");
-
+        search_txt.setText("");
     }//GEN-LAST:event_reset_btnActionPerformed
 
     private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
-
+        
         String stID = stSliitID_txt.getText().trim();
         String stCurrentyear = stYearselection.getSelectedItem().toString().trim(); //to dropdown
 
@@ -453,23 +453,23 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
         String stMobile = stMobileNumber_txt.getText().trim();
         String stHome = stHomeNumber_txt.getText().trim();
         String stEmail = stEmail_txt.getText().trim();
-
+        
         String staddDate3 = dateFormate.format(stStartdate_jDateChooser3.getDate()).trim(); //date 3
         String stSuEmail = stSupervisorEmail_txt.getText().trim();
-
+        
         String optionStudent = optionstudent_txt.getText().trim();
-
+        
         try {
-
+            
             if (stID.equals("") || stCurrentyear.equals("") || staddDate1.equals("") || staddDate2.equals("") || stSpeci.equals("") || stNameInitial.equals("") || stMobile.equals("") || stHome.equals("") || stEmail.equals("") || staddDate3.equals("") || stSuEmail.equals("")) {
                 JOptionPane.showMessageDialog(null, "Please fill all the FIELDS");
             }
-
+            
             A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO studentregistation_formi1a_part_2(sliitID, currentYear, calenderYear, periodYear, specialization, fName, "
                     + "mobileNumber, homeMobileNumber, sEmail, startDate, supervisoEmail, options) "
                     + "VALUE ('" + stID + "','" + stCurrentyear + "','" + staddDate1 + "','" + staddDate2 + "','" + stSpeci + "' ,'" + stNameInitial + "' ,'" + stMobile + "' ,"
                     + "'" + stHome + "', '" + stEmail + "', '" + staddDate3 + "', '" + stSuEmail + "', '" + optionStudent + "')");
-
+            
             stSliitID_txt.setText("");
             stYearselection.setSelectedItem("");
             stClaenderYear_jDateChooser1.setToolTipText("");
@@ -481,54 +481,54 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
             stEmail_txt.setText("");
             stStartdate_jDateChooser3.setToolTipText("");
             stSupervisorEmail_txt.setText("");
-
+            
             try {
-
+                
                 String itnumber = "@my.sliit.lk";
                 String password_part1 = B_System_Loggin_Inerfaces.StudentRegistation_Part1.jPasswordField1.getText().toString();
-
+                
                 A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO login(userName, password, options) VALUE ('" + stID + itnumber + "','" + password_part1 + "','" + optionStudent + "')");
-
+                
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, e);
             }
-
+            
             JOptionPane.showMessageDialog(null, "SUBMIT Successful");
-
+            
             if (sd == null) {
-
+                
                 MainDesktoppane.removeAll();
                 B_System_Loggin_Inerfaces.LogginPage lp = new B_System_Loggin_Inerfaces.LogginPage();
                 MainDesktoppane.add(lp).setVisible(true);
-
+                
                 lp.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
                 lp.setLocation(0, 0);
-
+                
             } else {
-
+                
                 MainDesktoppane.removeAll();
                 MainDesktoppane.add(sd).setVisible(true);
-
+                
                 sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
                 sd.setLocation(0, 0);
             }
-
+            
         } catch (Exception e) {
-
+            
             JOptionPane.showMessageDialog(null, "SUBMIT unSuccessful");
             JOptionPane.showMessageDialog(null, e);
-
+            
         }
-
+        
 
     }//GEN-LAST:event_submit_btnActionPerformed
 
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
-
+        
         int u = JOptionPane.showConfirmDialog(null, "If you really want to UPDATE?");
-
+        
         if (u == 0) {
-
+            
             String stID = stSliitID_txt.getText().trim();
             String stCurrentyear = stYearselection.getSelectedItem().toString(); //to dropdown
 
@@ -541,16 +541,16 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
             String stMobile = stMobileNumber_txt.getText().trim();
             String stHome = stHomeNumber_txt.getText().trim();
             String stEmail = stEmail_txt.getText().trim();
-
+            
             String staddDate3 = dateFormate.format(stStartdate_jDateChooser3.getDate()); //date 3
             String stSuEmail = stSupervisorEmail_txt.getText().trim();
-
+            
             try {
-
+                
                 A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_formi1a_part_2 SET sliitID = '" + stID + "', currentYear = '" + stCurrentyear + "',"
                         + " calenderYear = '" + staddDate1 + "', periodYear = '" + staddDate2 + "' ,specialization = '" + stSpeci + "' ,"
                         + "fName = '" + stNameInitial + "' , mobileNumber = '" + stMobile + "' ,  homeMobileNumber = '" + stHome + "', sEmail = '" + stEmail + "', startDate = '" + staddDate3 + "',supervisoEmail = '" + stSuEmail + "'  WHERE sliitID = '" + stID + "'");
-
+                
                 stSliitID_txt.setText("");
                 stYearselection.setSelectedItem("");
                 stClaenderYear_jDateChooser1.setToolTipText("");
@@ -562,13 +562,13 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                 stEmail_txt.setText("");
                 stStartdate_jDateChooser3.setToolTipText("");
                 stSupervisorEmail_txt.setText("");
-
+                
                 search_txt.setText("");
-
+                
                 JOptionPane.showMessageDialog(null, "Update Successfully");
-
+                
             } catch (SQLException ex) {
-
+                
                 JOptionPane.showMessageDialog(null, "Update Unsuccessfully");
                 JOptionPane.showMessageDialog(rootPane, ex);
             }
@@ -586,16 +586,16 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
     }//GEN-LAST:event_search_btnActionPerformed
 
     private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
-
+        
         int p = JOptionPane.showConfirmDialog(null, "If you really want to the DELETE");
-
+        
         if (p == 0) {
-
+            
             String sid = stSliitID_txt.getText();
             try {
                 DBconnect.connect().createStatement().executeUpdate("DELETE FROM studentregistation_formi1a_part_2 WHERE sliitID = '" + sid + "'");
                 JOptionPane.showMessageDialog(null, "DELETE Successfull");
-
+                
                 stSliitID_txt.setText("");
                 stYearselection.setSelectedItem("");
                 stClaenderYear_jDateChooser1.setToolTipText("");
@@ -607,13 +607,13 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                 stEmail_txt.setText("");
                 stStartdate_jDateChooser3.setToolTipText("");
                 stSupervisorEmail_txt.setText("");
-
+                
                 search_txt.setText("");
-
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
+            
         } else {
             JOptionPane.showMessageDialog(null, "Cancel The Request");
         }
@@ -671,11 +671,11 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
     // End of variables declaration//GEN-END:variables
 
     private void search() {
-
+        
         try {
             ResultSet rs = A_DataBase.DBconnect.connect().createStatement().executeQuery("select * from studentregistation_formi1a_part_2 where  sliitID ='" + search_txt.getText() + "'");
             if (rs.next()) {
-
+                
                 stSliitID_txt.setText(rs.getString("sliitID"));
                 stYearselection.setSelectedItem(rs.getString("currentYear")); //drop down
                 stClaenderYear_jDateChooser1.setToolTipText(rs.getString("calenderYear"));
@@ -687,14 +687,14 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                 stEmail_txt.setText(rs.getString("sEmail"));
                 stStartdate_jDateChooser3.setToolTipText(rs.getString("startDate"));//calender
                 stSupervisorEmail_txt.setText(rs.getString("supervisoEmail"));
-
+                
             } else {
                 search_txt.grabFocus();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
     }
-
+    
 }

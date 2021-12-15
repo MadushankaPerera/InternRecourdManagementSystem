@@ -112,6 +112,11 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         jLabel2.setText("SLIIT Student e-Mail address :");
 
         sliitEmail_address.setPreferredSize(new java.awt.Dimension(6, 35));
+        sliitEmail_address.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sliitEmail_addressActionPerformed(evt);
+            }
+        });
         sliitEmail_address.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 sliitEmail_addressKeyReleased(evt);
@@ -531,6 +536,10 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Cancel The Request");
         }
     }//GEN-LAST:event_delete_btnActionPerformed
+
+    private void sliitEmail_addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sliitEmail_addressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sliitEmail_addressActionPerformed
 
     RegistationType rtp;
     FormI1A_StudentRegistation_Part2 stpye;

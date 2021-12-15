@@ -394,8 +394,8 @@ public class LogginPage extends javax.swing.JInternalFrame {
 
     private void username_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_username_txtKeyReleased
 
-        //for Validation SLIIT emailID
-        String PATTERN = "^[a-zA-Z[0-9]]{0,10}$";
+//        //for Validation SLIIT emailID
+        String PATTERN = "^[a-zA-Z0-9]{0,10}[@][a-zA-Z0-9]{0,10}[.][a-zA-Z0-9]{0,5}[.][a-zA-Z0-9]{0,2}$";
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(username_txt.getText());
 
@@ -405,6 +405,18 @@ public class LogginPage extends javax.swing.JInternalFrame {
         } else {
             valemail_lbl.setText(null);
         }
+
+ //for Validation SLIIT email
+//        String PATTERN = "^[a-zA-Z0-9]{0,10}[@][a-zA-Z0-9]{0,10}[.][a-zA-Z0-9]{0,5}[.][a-zA-Z0-9]{0,2}$";
+//        Pattern patt = Pattern.compile(PATTERN);
+//        Matcher match = patt.matcher(sliitEmail_address.getText());
+//
+//        if (!match.matches()) {
+//            valEmail_lbl.setText("Enterd SLIIT E-Mail is Incorrect! ");
+//
+//        } else {
+//            valEmail_lbl.setText(null);
+//        }
     }//GEN-LAST:event_username_txtKeyReleased
 
     private void password_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_password_txtKeyReleased
