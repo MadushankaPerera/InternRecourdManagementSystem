@@ -568,4 +568,6 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         }
     }
 
+    
+    
 }
