@@ -337,15 +337,20 @@ public class LogginPage extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(null, "Welcome " + username_txt.getText());
 
                 }
+
             } else {
 
-                //JOptionPane.showMessageDialog(null, "Loging Faild");
+//                if (!equals(s1)) {
+//                    JOptionPane.showMessageDialog(null, "You are not eligible to Login in to the System!");
+//                }
+
                 username_txt.setText("");
                 password_txt.setText("");
 
             }
 
         } catch (Exception e) {
+
             JOptionPane.showMessageDialog(null, e);
         }
 
@@ -388,7 +393,7 @@ public class LogginPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_forgetPassword_lblMouseClicked
 
     private void username_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_username_txtKeyReleased
-       
+
         //for Validation SLIIT emailID
         String PATTERN = "^[a-zA-Z[0-9]]{0,10}$";
         Pattern patt = Pattern.compile(PATTERN);

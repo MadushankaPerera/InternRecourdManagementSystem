@@ -27,6 +27,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         initComponents();
 
         nextPage_btn.setEnabled(false);
+        sliitID_number.setText("");
     }
 
     @SuppressWarnings("unchecked")
@@ -39,12 +40,10 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         studentReg_lbl = new javax.swing.JLabel();
         BodyPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        sliitID_number = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         sliitEmail_address = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        yearSelectionDropDown = new javax.swing.JComboBox<>();
         BottomPanel = new javax.swing.JPanel();
         submite_btn = new javax.swing.JButton();
         nextPage_btn = new javax.swing.JButton();
@@ -54,8 +53,6 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         valEmail_lbl = new javax.swing.JLabel();
         valDropdown_lbl = new javax.swing.JLabel();
         valPassword_lbl = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        optionstudent_txt = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -194,13 +191,13 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         BottomPanelLayout.setVerticalGroup(
             BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BottomPanelLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nextPage_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(submite_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         valID_lbl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -225,12 +222,6 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
             }
         });
 
-        optionstudent_txt.setEditable(false);
-        optionstudent_txt.setBackground(new java.awt.Color(255, 255, 255));
-        optionstudent_txt.setForeground(new java.awt.Color(255, 255, 255));
-        optionstudent_txt.setText("student");
-        optionstudent_txt.setBorder(null);
-
         javax.swing.GroupLayout BodyPanelLayout = new javax.swing.GroupLayout(BodyPanel);
         BodyPanel.setLayout(BodyPanelLayout);
         BodyPanelLayout.setHorizontalGroup(
@@ -245,9 +236,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
                     .addComponent(sliitID_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(BodyPanelLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(optionstudent_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(172, 172, 172)
+                        .addGap(213, 213, 213)
                         .addComponent(valID_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(BodyPanelLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -268,9 +257,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
             .addGroup(BodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(optionstudent_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1)
                     .addComponent(valID_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sliitID_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -358,25 +345,16 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
         String eMail = sliitEmail_address.getText().trim();
         String currentYeard = yearSelectionDropDown.getSelectedItem().toString(); //to dropdown
         String psw = jPasswordField1.getText().trim();
-        String optionStudent = optionstudent_txt.getText().trim();
 
         try {
 
-            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO studentregistation_part_1(sliitID, sliitEmail, currentYear, createPassword, options) VALUE ('" + sID + "','" + eMail + "','" + currentYeard + "','" + psw + "','" + optionStudent + "')");
+            A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO studentregistation_part_1(sliitID, sliitEmail, currentYear, createPassword) VALUE ('" + sID + "','" + eMail + "','" + currentYeard + "','" + psw + "')");
             JOptionPane.showMessageDialog(null, "SUBMIT Successful");
 
             sliitID_number.setText("");
             sliitEmail_address.setText("");
             yearSelectionDropDown.setSelectedItem("");
             jPasswordField1.setText("");
-            
-            
-            try {
-                A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO login(userName, password, options) VALUE ('" + eMail + "','" + psw + "','" + optionStudent + "')");
-
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(rootPane, e);
-            }
 
         } catch (Exception e) {
 
@@ -513,11 +491,10 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
             String sEmail = sliitEmail_address.getText();
             String sYear = yearSelectionDropDown.getSelectedItem().toString();
             String pss = jPasswordField1.getText();
-            String option = optionstudent_txt.getText();
 
             try {
 
-                A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_part_1 SET sliitID = '" + sId + "', sliitEmail = '" + sEmail + "', currentYear = '" + sYear + "', createPassword = '" + pss + "' ,options = '" + option + "' WHERE sliitID = '" + sId + "'");
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_part_1 SET sliitID = '" + sId + "', sliitEmail = '" + sEmail + "', currentYear = '" + sYear + "', createPassword = '" + pss + "'  WHERE sliitID = '" + sId + "'");
                 JOptionPane.showMessageDialog(null, "Update Successfully");
 
             } catch (SQLException ex) {
@@ -569,11 +546,10 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField jPasswordField1;
+    public static final javax.swing.JPasswordField jPasswordField1 = new javax.swing.JPasswordField();
     private javax.swing.JButton nextPage_btn;
-    private javax.swing.JTextField optionstudent_txt;
     private javax.swing.JTextField sliitEmail_address;
-    public static javax.swing.JTextField sliitID_number;
+    public static final javax.swing.JTextField sliitID_number = new javax.swing.JTextField();
     private javax.swing.JLabel studentReg_lbl;
     private javax.swing.JButton submite_btn;
     private javax.swing.JButton update_btn;
@@ -581,7 +557,7 @@ public class StudentRegistation_Part1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel valEmail_lbl;
     private javax.swing.JLabel valID_lbl;
     private javax.swing.JLabel valPassword_lbl;
-    private javax.swing.JComboBox<String> yearSelectionDropDown;
+    public static final javax.swing.JComboBox<String> yearSelectionDropDown = new javax.swing.JComboBox<>();
     // End of variables declaration//GEN-END:variables
 
     private void search() {

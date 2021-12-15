@@ -16,6 +16,10 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
 
     public FormI1A_StudentRegistation_Part2() {
         initComponents();
+
+        String sidpart_1 = B_System_Loggin_Inerfaces.StudentRegistation_Part1.sliitID_number.getText().toString();
+        stSliitID_txt.setText(sidpart_1);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -62,6 +66,7 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
         stPeriodYear_jDateChooser2 = new com.toedter.calendar.JDateChooser();
         stStartdate_jDateChooser3 = new com.toedter.calendar.JDateChooser();
         stSpecialization_jComboBox1 = new javax.swing.JComboBox<>();
+        optionstudent_txt = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -119,6 +124,8 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Student Name with Initials");
+
+        stSliitID_txt.setEnabled(false);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setText("Student Mobile Phone Number");
@@ -215,7 +222,7 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
         });
 
         stYearselection.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        stYearselection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year 1st Semester ", "1st Year 2nd Semester  ", " ", "2nd Year 1st Semester ", "2nd Year 2nd Semester  ", " ", "3rd Year 1st Semester ", "3rd Year 2nd Semester  ", " ", "4th Year 1st Semester ", "4th Year 2nd Semeste r" }));
+        stYearselection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year 1st Semester", "1st Year 2nd Semester", " ", "2nd Year 1st Semester", "2nd Year 2nd Semester", " ", "3rd Year 1st Semester", "3rd Year 2nd Semester", " ", "4th Year 1st Semester", "4th Year 2nd Semester" }));
 
         stClaenderYear_jDateChooser1.setDateFormatString("dd-MM-yyyy");
 
@@ -225,6 +232,12 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
 
         stSpecialization_jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         stSpecialization_jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Information Technology.", " ", "Computer systems & network engineering.", " ", "Software Engineering.", " ", "Information Systems Engineering.", " ", "Cyber Security.", " ", "Interactive Media.", " ", "Data Science.", " ", "Bachelor of Information Technology – Curtin University." }));
+
+        optionstudent_txt.setEditable(false);
+        optionstudent_txt.setBackground(new java.awt.Color(255, 255, 255));
+        optionstudent_txt.setForeground(new java.awt.Color(255, 255, 255));
+        optionstudent_txt.setText("student");
+        optionstudent_txt.setBorder(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -251,7 +264,8 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                             .addComponent(stSliitID_txt)
                             .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(optionstudent_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(search_btn))
@@ -300,9 +314,11 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                 .addContainerGap()
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(search_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(search_txt))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(search_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                        .addComponent(search_txt))
+                    .addComponent(optionstudent_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -380,6 +396,12 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+//    private void droa(){
+//    
+//        Integer dropdown_part1 = B_System_Loggin_Inerfaces.StudentRegistation_Part1.yearSelectionDropDown.getSelectedIndex();
+//        stYearselection.setSelectedIndex(dropdown_part1);
+//    }
+
     private void back_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_BtnActionPerformed
 
         if (sd == null) {
@@ -435,6 +457,8 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
         String staddDate3 = dateFormate.format(stStartdate_jDateChooser3.getDate()).trim(); //date 3
         String stSuEmail = stSupervisorEmail_txt.getText().trim();
 
+        String optionStudent = optionstudent_txt.getText().trim();
+
         try {
 
             if (stID.equals("") || stCurrentyear.equals("") || staddDate1.equals("") || staddDate2.equals("") || stSpeci.equals("") || stNameInitial.equals("") || stMobile.equals("") || stHome.equals("") || stEmail.equals("") || staddDate3.equals("") || stSuEmail.equals("")) {
@@ -442,9 +466,9 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
             }
 
             A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO studentregistation_formi1a_part_2(sliitID, currentYear, calenderYear, periodYear, specialization, fName, "
-                    + "mobileNumber, homeMobileNumber, sEmail, startDate, supervisoEmail) "
+                    + "mobileNumber, homeMobileNumber, sEmail, startDate, supervisoEmail, options) "
                     + "VALUE ('" + stID + "','" + stCurrentyear + "','" + staddDate1 + "','" + staddDate2 + "','" + stSpeci + "' ,'" + stNameInitial + "' ,'" + stMobile + "' ,"
-                    + "'" + stHome + "', '" + stEmail + "', '" + staddDate3 + "', '" + stSuEmail + "')");
+                    + "'" + stHome + "', '" + stEmail + "', '" + staddDate3 + "', '" + stSuEmail + "', '" + optionStudent + "')");
 
             stSliitID_txt.setText("");
             stYearselection.setSelectedItem("");
@@ -457,6 +481,17 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
             stEmail_txt.setText("");
             stStartdate_jDateChooser3.setToolTipText("");
             stSupervisorEmail_txt.setText("");
+
+            try {
+
+                String itnumber = "@my.sliit.lk";
+                String password_part1 = B_System_Loggin_Inerfaces.StudentRegistation_Part1.jPasswordField1.getText().toString();
+
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("INSERT INTO login(userName, password, options) VALUE ('" + stID + itnumber + "','" + password_part1 + "','" + optionStudent + "')");
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, e);
+            }
 
             JOptionPane.showMessageDialog(null, "SUBMIT Successful");
 
@@ -613,6 +648,7 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel mobileNumber_lbl;
+    private javax.swing.JTextField optionstudent_txt;
     private javax.swing.JButton reset_btn;
     private javax.swing.JLabel sEmail_lbl;
     private javax.swing.JLabel sID_lbl;

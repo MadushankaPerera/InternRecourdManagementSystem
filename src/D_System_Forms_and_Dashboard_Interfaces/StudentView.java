@@ -72,12 +72,6 @@ public class StudentView extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Year:");
 
-        stEmail_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stEmail_txtActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Specilizatuion:");
 
@@ -360,7 +354,7 @@ public class StudentView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_back_btnActionPerformed
 
     private void SearchBar_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchBar_txtKeyReleased
-
+        search();
         String Search = SearchBar_txt.getText();
 
         if (Search.matches("[a-z A-Z][0-9]+")) {
@@ -380,10 +374,6 @@ public class StudentView extends javax.swing.JInternalFrame {
     private void Search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search_btnActionPerformed
         search();
     }//GEN-LAST:event_Search_btnActionPerformed
-
-    private void stEmail_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stEmail_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stEmail_txtActionPerformed
 
     Supervisor_DashBoard sd;
     B_System_Loggin_Inerfaces.StudentRegistation_Part1 s2;

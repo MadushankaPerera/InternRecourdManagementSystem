@@ -6,10 +6,12 @@
 package E_System_Admin_Interfaces;
 
 import A_DataBase.DBconnect;
+import static B_System_Loggin_Inerfaces.StudentRegistation_Part1.sliitID_number;
 import D_System_Forms_and_Dashboard_Interfaces.AdminDashboard;
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
 import D_System_Forms_and_Dashboard_Interfaces.Supervisor_DashBoard;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -94,6 +96,11 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         delete_btn.setBackground(new java.awt.Color(255, 255, 255));
         delete_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         delete_btn.setText("DELETE");
+        delete_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BottomPanelLayout = new javax.swing.GroupLayout(BottomPanel);
         BottomPanel.setLayout(BottomPanelLayout);
@@ -238,6 +245,8 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Name:");
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Information Technology.", " ", "Computer systems & network engineering.", " ", "Software Engineering.", " ", "Information Systems Engineering.", " ", "Cyber Security.", " ", "Interactive Media.", " ", "Data Science.", " ", "Bachelor of Information Technology – Curtin University." }));
+
         TopPanel.setBackground(new java.awt.Color(0, 0, 153));
 
         studentDetails_lbl.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
@@ -293,7 +302,7 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                     .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BottomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -301,22 +310,21 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(stID_txt)
                             .addComponent(stname_txt))
-                        .addGap(46, 46, 46)
+                        .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(stYear_txt))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(stEmail_txt))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(stEmail_txt)))
-                        .addGap(18, 18, 18)
+                                .addComponent(stYear_txt)))
+                        .addGap(46, 46, 46)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(33, 33, 33)))
+                        .addComponent(jComboBox1, 0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -327,17 +335,10 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(BodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(stID_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(stname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -345,8 +346,16 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(stYear_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                            .addComponent(stYear_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(stID_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(stname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(BottomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -389,7 +398,31 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_Add_btnActionPerformed
 
     private void edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_btnActionPerformed
-        // TODO add your handling code here:
+
+        int u = JOptionPane.showConfirmDialog(null, "If you really want to UPDATE?");
+
+        if (u == 0) {
+
+            String sId = sliitID_number.getText();
+            String sName = stname_txt.getText();
+            String sEmail = stEmail_txt.getText();
+            String yr = stYear_txt.getText();
+            String stSpec = jComboBox1.getSelectedItem().toString();
+
+            try {
+
+                A_DataBase.DBconnect.connect().createStatement().executeUpdate("UPDATE studentregistation_formi1a_part_2 SET sliitID = '" + sId + "', fName = '" + sName + "', sEmail = '" + sEmail + "', calenderYear = '" + yr + "' ,specialization = '" + stSpec + "' WHERE sliitID = '" + sId + "'");
+                JOptionPane.showMessageDialog(null, "Update Successfully");
+
+                SearchBar_txt.setText("");
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Update Unsuccessfully");
+                JOptionPane.showMessageDialog(rootPane, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Have a Good Day!");
+        }
     }//GEN-LAST:event_edit_btnActionPerformed
 
     private void SearchBar_txtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchBar_txtFocusGained
@@ -397,6 +430,8 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_SearchBar_txtFocusGained
 
     private void SearchBar_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchBar_txtKeyReleased
+
+        search();
 
         String Search = SearchBar_txt.getText();
 
@@ -439,7 +474,35 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_back_btnActionPerformed
 
-    //page Calling 
+    private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
+        int p = JOptionPane.showConfirmDialog(null, "If you really want to the DELETE");
+
+        if (p == 0) {
+
+            String sid = SearchBar_txt.getText();
+            try {
+                DBconnect.connect().createStatement().executeUpdate("DELETE FROM studentregistation_formi1a_part_2 WHERE sliitID = '" + sid + "'");
+                JOptionPane.showMessageDialog(null, "DELETE Successfull");
+
+                stID_txt.setText("");
+                stYear_txt.setText("");
+                stEmail_txt.setText("");
+                stname_txt.setText("");
+
+                SearchBar_txt.setText("");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Cancel The Request");
+        }
+
+
+    }//GEN-LAST:event_delete_btnActionPerformed
+
+//page Calling 
     AdminDashboard sd;
     B_System_Loggin_Inerfaces.StudentRegistation_Part1 s2;
 

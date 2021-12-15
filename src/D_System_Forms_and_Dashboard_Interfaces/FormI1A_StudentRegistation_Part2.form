@@ -66,7 +66,8 @@
                                   <Component id="stSliitID_txt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="header" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="optionstudent_txt" min="-2" pref="153" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="search_txt" min="-2" pref="283" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="search_btn" min="-2" max="-2" attributes="0"/>
@@ -130,9 +131,12 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="header" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="search_btn" pref="34" max="32767" attributes="0"/>
-                          <Component id="search_txt" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="search_btn" pref="34" max="32767" attributes="0"/>
+                              <Component id="search_txt" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="optionstudent_txt" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -316,6 +320,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="stSliitID_txt">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registation_username_txt"/>
               </AuxValues>
@@ -505,17 +512,17 @@
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="11">
-                    <StringItem index="0" value="1st Year 1st Semester "/>
-                    <StringItem index="1" value="1st Year 2nd Semester  "/>
+                    <StringItem index="0" value="1st Year 1st Semester"/>
+                    <StringItem index="1" value="1st Year 2nd Semester"/>
                     <StringItem index="2" value=" "/>
-                    <StringItem index="3" value="2nd Year 1st Semester "/>
-                    <StringItem index="4" value="2nd Year 2nd Semester  "/>
+                    <StringItem index="3" value="2nd Year 1st Semester"/>
+                    <StringItem index="4" value="2nd Year 2nd Semester"/>
                     <StringItem index="5" value=" "/>
-                    <StringItem index="6" value="3rd Year 1st Semester "/>
-                    <StringItem index="7" value="3rd Year 2nd Semester  "/>
+                    <StringItem index="6" value="3rd Year 1st Semester"/>
+                    <StringItem index="7" value="3rd Year 2nd Semester"/>
                     <StringItem index="8" value=" "/>
-                    <StringItem index="9" value="4th Year 1st Semester "/>
-                    <StringItem index="10" value="4th Year 2nd Semeste r"/>
+                    <StringItem index="9" value="4th Year 1st Semester"/>
+                    <StringItem index="10" value="4th Year 2nd Semester"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -566,6 +573,21 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="optionstudent_txt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="student"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
