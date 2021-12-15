@@ -5,8 +5,13 @@
  */
 package E_System_Admin_Interfaces;
 
+import A_DataBase.DBconnect;
 import D_System_Forms_and_Dashboard_Interfaces.AdminDashboard;
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import D_System_Forms_and_Dashboard_Interfaces.Supervisor_DashBoard;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -19,6 +24,8 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
      */
     public AdminStudentDeatils() {
         initComponents();
+
+        show_tbl();
     }
 
     /**
@@ -48,10 +55,10 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         studentDetails_lbl = new javax.swing.JLabel();
         back_btn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        stname_txt = new javax.swing.JTextField();
+        stID_txt = new javax.swing.JTextField();
+        stYear_txt = new javax.swing.JTextField();
+        stEmail_txt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -69,10 +76,15 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         Add_btn.setBackground(new java.awt.Color(255, 255, 255));
         Add_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Add_btn.setText("ADD");
+        Add_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Add_btnActionPerformed(evt);
+            }
+        });
 
         edit_btn.setBackground(new java.awt.Color(255, 255, 255));
         edit_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        edit_btn.setText("EDIT");
+        edit_btn.setText("UPDATE");
         edit_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_btnActionPerformed(evt);
@@ -105,7 +117,7 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                         .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(edit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Add_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         BodyPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -117,8 +129,18 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                 SearchBar_txtFocusGained(evt);
             }
         });
+        SearchBar_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SearchBar_txtKeyReleased(evt);
+            }
+        });
 
         Search_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search-24.png"))); // NOI18N
+        Search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Search_btnActionPerformed(evt);
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -194,10 +216,10 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
             .addGroup(BodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
                     .addGroup(BodyPanelLayout.createSequentialGroup()
                         .addComponent(SearchBar_txt)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Search_btn)))
                 .addContainerGap())
         );
@@ -215,8 +237,6 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Name:");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         TopPanel.setBackground(new java.awt.Color(0, 0, 153));
 
@@ -267,34 +287,36 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BottomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BottomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
+                        .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2))
-                        .addGap(72, 72, 72)
+                            .addComponent(stID_txt)
+                            .addComponent(stname_txt))
+                        .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(stYear_txt))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(stEmail_txt)))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField3))
-                        .addGap(57, 57, 57)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(33, 33, 33)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -304,21 +326,27 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
                 .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(stID_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(stname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(stEmail_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(stYear_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(BottomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -331,15 +359,68 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_btnActionPerformed
+
+        if (s2 == null) {
+
+            MainDesktoppane.removeAll();
+            B_System_Loggin_Inerfaces.StudentRegistation_Part1 sp1 = new B_System_Loggin_Inerfaces.StudentRegistation_Part1();
+            MainDesktoppane.add(sp1).setVisible(true);
+
+            sp1.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            sp1.setLocation(0, 0);
+
+        } else {
+
+            MainDesktoppane.removeAll();
+            MainDesktoppane.add(s2).setVisible(true);
+
+            s2.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            s2.setLocation(0, 0);
+        }
+    }//GEN-LAST:event_Add_btnActionPerformed
+
+    private void edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edit_btnActionPerformed
+
+    private void SearchBar_txtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchBar_txtFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchBar_txtFocusGained
+
+    private void SearchBar_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchBar_txtKeyReleased
+
+        String Search = SearchBar_txt.getText();
+
+        if (Search.matches("[a-z A-Z][0-9]+")) {
+            JOptionPane.showMessageDialog(null, "Enter Valide StudentID Number");
+        } else {
+            try {
+                ResultSet rs = DBconnect.connect().createStatement().executeQuery("SELECT * FROM studentregistation_formi1a_part_2 WHERE sliitID LIKE '%" + Search + "%'");
+
+                jTable2.setModel(DbUtils.resultSetToTableModel(rs));
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, e);
+            }
+        }
+    }//GEN-LAST:event_SearchBar_txtKeyReleased
+
+    private void Search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search_btnActionPerformed
+        search();
+    }//GEN-LAST:event_Search_btnActionPerformed
+
     private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
 
-        if (adD == null) {
+        if (sd == null) {
 
             MainDesktoppane.removeAll();
             AdminDashboard ad = new AdminDashboard();
@@ -351,23 +432,16 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
         } else {
 
             MainDesktoppane.removeAll();
-            MainDesktoppane.add(adD).setVisible(true);
+            MainDesktoppane.add(sd).setVisible(true);
 
-            adD.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
-            adD.setLocation(0, 0);
+            sd.setSize(MainDesktoppane.getWidth(), MainDesktoppane.getHeight()); //Set InternalFram to Full size
+            sd.setLocation(0, 0);
         }
     }//GEN-LAST:event_back_btnActionPerformed
 
-    private void SearchBar_txtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchBar_txtFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchBar_txtFocusGained
-
-    private void edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edit_btnActionPerformed
-
     //page Calling 
-    AdminDashboard adD;
+    AdminDashboard sd;
+    B_System_Loggin_Inerfaces.StudentRegistation_Part1 s2;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Add_btn;
@@ -388,10 +462,45 @@ public class AdminStudentDeatils extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField stEmail_txt;
+    private javax.swing.JTextField stID_txt;
+    private javax.swing.JTextField stYear_txt;
+    private javax.swing.JTextField stname_txt;
     private javax.swing.JLabel studentDetails_lbl;
     // End of variables declaration//GEN-END:variables
+
+    private void search() {
+
+        try {
+            ResultSet rs = A_DataBase.DBconnect.connect().createStatement().executeQuery("select * from studentregistation_formi1a_part_2 where  sliitID ='" + SearchBar_txt.getText() + "'");
+            if (rs.next()) {
+
+                stID_txt.setText(rs.getString("sliitID"));
+                stEmail_txt.setText(rs.getString("sEmail"));
+                stname_txt.setText(rs.getString("fName"));
+                stYear_txt.setText(rs.getString("currentYear"));
+                jComboBox1.setSelectedItem(rs.getString("specialization")); //drop down
+
+            } else {
+                SearchBar_txt.grabFocus();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void show_tbl() {
+
+        try {
+            ResultSet rs = DBconnect.connect().createStatement().executeQuery("SELECT * FROM studentregistation_formi1a_part_2 order by sliitID");
+
+            jTable2.setModel(DbUtils.resultSetToTableModel(rs));
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Table LOAD error");
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }
+
 }

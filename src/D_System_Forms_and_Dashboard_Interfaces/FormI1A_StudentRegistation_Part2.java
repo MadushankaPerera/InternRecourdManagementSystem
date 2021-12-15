@@ -196,6 +196,11 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
                 .addGap(30, 30, 30))
         );
 
+        search_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_txtActionPerformed(evt);
+            }
+        });
         search_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 search_txtKeyReleased(evt);
@@ -578,6 +583,10 @@ public class FormI1A_StudentRegistation_Part2 extends javax.swing.JInternalFrame
             JOptionPane.showMessageDialog(null, "Cancel The Request");
         }
     }//GEN-LAST:event_delete_btnActionPerformed
+
+    private void search_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_txtActionPerformed
 
     //To existing object checker
     B_System_Loggin_Inerfaces.LogginPage sd;
