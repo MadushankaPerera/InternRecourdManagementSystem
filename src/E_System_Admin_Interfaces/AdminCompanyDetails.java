@@ -5,20 +5,27 @@
  */
 package E_System_Admin_Interfaces;
 
+import A_DataBase.DBconnect;
 import D_System_Forms_and_Dashboard_Interfaces.AdminDashboard;
 import static C_System_Common_Interfaces.IRMS_STARTER_Page.MainDesktoppane;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
  * @author perer
  */
-public class AdminCompanyDetails extends javax.swing.JInternalFrame {
+public final class AdminCompanyDetails extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form AdminCompanyDetails
      */
     public AdminCompanyDetails() {
         initComponents();
+
+        show_tbl();
+        SearchBar_txt.grabFocus();
     }
 
     /**
@@ -38,10 +45,16 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
         Search_btn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        Original_txt = new javax.swing.JTextField();
+        Eitable_txt = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         BottomPanel = new javax.swing.JPanel();
         Add_btn = new javax.swing.JButton();
-        edit_btn = new javax.swing.JButton();
+        Update_btn = new javax.swing.JButton();
         delete_btn = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 255));
 
         TopPanel.setBackground(new java.awt.Color(0, 0, 153));
 
@@ -81,6 +94,8 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        BodyPanel.setBackground(new java.awt.Color(255, 255, 255));
+
         SearchBar_txt.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         SearchBar_txt.setToolTipText("");
         SearchBar_txt.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -88,8 +103,18 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
                 SearchBar_txtFocusGained(evt);
             }
         });
+        SearchBar_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SearchBar_txtKeyReleased(evt);
+            }
+        });
 
         Search_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search-24.png"))); // NOI18N
+        Search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Search_btnActionPerformed(evt);
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -156,7 +181,21 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable2MousePressed(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
+
+        jLabel1.setText("Original Company Name:");
+
+        Original_txt.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Original_txt.setForeground(new java.awt.Color(255, 51, 0));
+        Original_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Original_txt.setEnabled(false);
+
+        jLabel2.setText("Edite Company Name:");
 
         javax.swing.GroupLayout BodyPanelLayout = new javax.swing.GroupLayout(BodyPanel);
         BodyPanel.setLayout(BodyPanelLayout);
@@ -165,11 +204,19 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
             .addGroup(BodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
                     .addGroup(BodyPanelLayout.createSequentialGroup()
                         .addComponent(SearchBar_txt)
                         .addGap(18, 18, 18)
-                        .addComponent(Search_btn)))
+                        .addComponent(Search_btn))
+                    .addComponent(Original_txt, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(BodyPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(Eitable_txt)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)))
                 .addContainerGap())
         );
         BodyPanelLayout.setVerticalGroup(
@@ -180,26 +227,41 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
                     .addComponent(SearchBar_txt)
                     .addComponent(Search_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Original_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Eitable_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Add_btn.setBackground(new java.awt.Color(255, 255, 255));
-        Add_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Add_btn.setText("ADD");
+        BottomPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        edit_btn.setBackground(new java.awt.Color(255, 255, 255));
-        edit_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        edit_btn.setText("EDIT");
-        edit_btn.addActionListener(new java.awt.event.ActionListener() {
+        Add_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Add_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add.png"))); // NOI18N
+
+        Update_btn.setBackground(new java.awt.Color(255, 255, 255));
+        Update_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Update_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-update-64.png"))); // NOI18N
+        Update_btn.setText("UPDATE");
+        Update_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edit_btnActionPerformed(evt);
+                Update_btnActionPerformed(evt);
             }
         });
 
         delete_btn.setBackground(new java.awt.Color(255, 255, 255));
         delete_btn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        delete_btn.setText("DELETE");
+        delete_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Delete.png"))); // NOI18N
+        delete_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BottomPanelLayout = new javax.swing.GroupLayout(BottomPanel);
         BottomPanel.setLayout(BottomPanelLayout);
@@ -209,7 +271,7 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
                 .addGap(75, 75, 75)
                 .addComponent(Add_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(95, 95, 95)
-                .addComponent(edit_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Update_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(71, 71, 71)
                 .addComponent(delete_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(54, 54, 54))
@@ -219,10 +281,10 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
             .addGroup(BottomPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(edit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Add_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Add_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Update_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -244,10 +306,10 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BottomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -275,12 +337,94 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_back_btnActionPerformed
 
     private void SearchBar_txtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchBar_txtFocusGained
-        // TODO add your handling code here:
+        search();
     }//GEN-LAST:event_SearchBar_txtFocusGained
 
-    private void edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edit_btnActionPerformed
+    private void Update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_btnActionPerformed
+
+        int p = JOptionPane.showConfirmDialog(null, "If you really want to UPDATE?");
+
+        if (p == 0) {
+            String searchbar = SearchBar_txt.getText();
+
+            try {
+                DBconnect.connect().createStatement().executeUpdate("UPDATE companies SET  B = '" + searchbar + "' WHERE B = '" + searchbar + "' ");
+                JOptionPane.showMessageDialog(null, "Update Successfully");
+
+                show_tbl();
+                Original_txt.setText("");
+                Eitable_txt.setText("");
+                SearchBar_txt.setText("");
+
+            } catch (Exception e) {
+
+                JOptionPane.showMessageDialog(null, "Update Unsuccessfully");
+                JOptionPane.showMessageDialog(rootPane, e);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Have a Good Day!");
+        }
+    }//GEN-LAST:event_Update_btnActionPerformed
+
+    private void Search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search_btnActionPerformed
+
+        search();
+    }//GEN-LAST:event_Search_btnActionPerformed
+
+    private void SearchBar_txtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchBar_txtKeyReleased
+        search();
+        String Search = SearchBar_txt.getText();
+
+        if (Search.matches("[a-z A-Z][0-9]+")) {
+            JOptionPane.showMessageDialog(null, "Enter Valide Company NAme");
+        } else {
+            try {
+                ResultSet rs = DBconnect.connect().createStatement().executeQuery("SELECT * FROM companies WHERE B LIKE '%" + Search + "%'");
+
+                jTable2.setModel(DbUtils.resultSetToTableModel(rs));
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, e);
+            }
+        }
+    }//GEN-LAST:event_SearchBar_txtKeyReleased
+
+    private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
+        int p = JOptionPane.showConfirmDialog(null, "If you really want to the DELETE");
+
+        if (p == 0) {
+
+            String sid = SearchBar_txt.getText();
+            try {
+                DBconnect.connect().createStatement().executeUpdate("DELETE FROM companies WHERE B = '" + sid + "'");
+                JOptionPane.showMessageDialog(null, "DELETE Successfull");
+
+                Original_txt.setText("");
+                Eitable_txt.setText("");
+
+                SearchBar_txt.setText("");
+                show_tbl();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Cancel The Request");
+        }
+
+    }//GEN-LAST:event_delete_btnActionPerformed
+
+    private void jTable2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MousePressed
+
+        int raw = jTable2.getSelectedRow();
+        
+        String id = jTable2.getValueAt(raw, 1).toString();
+        
+        Eitable_txt.setText(id);
+        Original_txt.setText(id);
+    }//GEN-LAST:event_jTable2MousePressed
 
     //page Calling 
     AdminDashboard adD;
@@ -289,14 +433,50 @@ public class AdminCompanyDetails extends javax.swing.JInternalFrame {
     private javax.swing.JButton Add_btn;
     private javax.swing.JPanel BodyPanel;
     private javax.swing.JPanel BottomPanel;
+    private javax.swing.JTextField Eitable_txt;
+    private javax.swing.JTextField Original_txt;
     private javax.swing.JTextField SearchBar_txt;
     private javax.swing.JButton Search_btn;
     private javax.swing.JPanel TopPanel;
+    private javax.swing.JButton Update_btn;
     private javax.swing.JButton back_btn;
     private javax.swing.JButton delete_btn;
-    private javax.swing.JButton edit_btn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel supervisorDetails_lbl;
     // End of variables declaration//GEN-END:variables
+
+    public void show_tbl() {
+
+        try {
+            ResultSet rs = DBconnect.connect().createStatement().executeQuery("SELECT * FROM companies order by B");
+
+            jTable2.setModel(DbUtils.resultSetToTableModel(rs));
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Table LOAD error");
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }
+
+    private void search() {
+
+        try {
+            ResultSet rs = A_DataBase.DBconnect.connect().createStatement().executeQuery("select * from companies where  B ='" + SearchBar_txt.getText() + "'");
+            if (rs.next()) {
+
+                Original_txt.setText(rs.getString("B"));
+                Eitable_txt.setText(rs.getString("B"));
+
+            } else {
+                SearchBar_txt.grabFocus();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
